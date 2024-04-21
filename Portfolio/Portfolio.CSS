@@ -1,0 +1,39 @@
+/* Additional styles for header */
+header {
+  background-color: #F7CAC9; /* Light blush pink background */
+  color: #333; /* Dark text color */
+}
+
+/* Additional styles for main content */
+main {
+  background-color: #fff; /* White background */
+  padding-top: 50px; /* Add padding to the top */
+}
+
+/* Additional styles for footer */
+footer {
+  background-color: #F7CAC9; /* Light blush pink background */
+  color: #333; /* Dark text color */
+  padding: 20px 0; /* Add padding to top and bottom */
+}
+
+/* Additional styles for cards */
+.card {
+  background-color: #fff; /* White background */
+  border: 1px solid #f5e1da; /* Light blush pink border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.card-body, .card-title, .card-text {
+  color: #333; /* Dark text color */
+}
+
+/* Additional styles for links */
+a {
+  color: #f58794; /* Light blush pink link color */
+  text-decoration: none; /* Remove default underline */
+}
+
+a:hover {
+  color: #d46978; /* Darker blush pink color on hover */
+}
