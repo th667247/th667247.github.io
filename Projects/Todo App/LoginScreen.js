@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import {
-  View,
-  TextInput,
-  Button,
-  AsyncStorage,
-  StyleSheet,
-} from "react-native";
+import { View, Button, AsyncStorage, StyleSheet, Text } from "react-native";
 import { Input } from "react-native-elements";
 
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = async () => {
     const loginDataString = await AsyncStorage.getItem("loginData");
@@ -23,7 +18,7 @@ export default function LoginScreen({ navigation }) {
     if (user) {
       navigation.navigate("TodoApp");
     } else {
-      alert("Invalid username or password");
+      setErrorMessage("Invalid username or password");
     }
   };
 
@@ -41,6 +36,9 @@ export default function LoginScreen({ navigation }) {
           secureTextEntry={true}
           onChangeText={(text) => setPassword(text)}
         />
+        {errorMessage ? (
+          <Text style={styles.errorMessage}>{errorMessage}</Text>
+        ) : null}
         <Button testID="login-button" title="Login" onPress={handleLogin} />
         <Button
           testID="login-register"
@@ -65,5 +63,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 10,
     alignItems: "center",
+  },
+  errorMessage: {
+    color: "red",
+    marginBottom: 10,
   },
 });

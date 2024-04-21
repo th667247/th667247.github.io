@@ -6,9 +6,12 @@ Welcome to my portfolio! This README provides an overview of the projects and ex
 
 ### 1. Exercise App
 
-- Description: The Exercise app is a fitness application designed to help users plan, track, and achieve their workout goals.
-- Technologies: React Native
-- [Demo](#) | [GitHub](#)
+- Description: The Exercise App, built with React, is a fitness application designed to help users time, track, and achieve their workout goals.
+- Features:
+  - Stopwatch: Track session time accurately.
+  - Exercise Tracking: Monitor reps and exercise durations.
+- Encountered Challenge: Troubleshooting the stopwatch functionality revealed the need for a dedicated function to ensure precise time formatting.
+- [Demo](https://youtu.be/Ys4N5F5gD_g) | [GitHub](https://github.com/th667247/th667247.github.io/tree/22cd2ab21bed33aa3a6656c6cdbf01009c23b8eb/Projects/Exercise%20App)
 
 ### 2. Todo App
 
@@ -30,7 +33,19 @@ Welcome to my portfolio! This README provides an overview of the projects and ex
 
 ## Exercises
 
-### 1. Flash Card App
+### 1. Flash Card Design
+
+- Description: A flash card app for practicing vocabulary or concepts.
+- Technologies: React
+- [Demo](#) | [GitHub](#)
+
+### 2. Todo Design
+
+- Description: A flash card app for practicing vocabulary or concepts.
+- Technologies: React
+- [Demo](#) | [GitHub](#)
+
+### 3. Exercise Design
 
 - Description: A flash card app for practicing vocabulary or concepts.
 - Technologies: React
