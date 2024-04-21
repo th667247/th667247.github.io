@@ -1,16 +1,14 @@
-export default function MenuItem({
-  itemId,
-  itemName,
-  itemPrice,
-  itemDescription,
-}) {
-  let menuId = "menu-item-${itemId}";
+import React from "react";
+import Menu from "../Menu";
+
+function MenuApp({ data }) {
   return (
-    <div class="menu-item" id={menuId}>
-      <span>${itemPrice}</span>
-      <h2>{itemName}</h2>
-      <p> {itemDescription}</p>
-      <button>Add to Cart</button>
+    <div className="menu-app">
+      {data.map((menu) => (
+        <Menu key={menu.menuName} {...menu} />
+      ))}
     </div>
   );
 }
+
+export default MenuApp;

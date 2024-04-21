@@ -1,5 +1,14 @@
+import React from "react";
 import Menu from "../Menu";
-export default function MenuApp({ data }) {
-  let menus = data.map((menuData, index) => <Menu key={index} {...menuData} />);
-  return <>{menus}</>;
+
+function MenuApp({ data }) {
+  return (
+    <div className="menu-app">
+      {data.map((menu) => (
+        <Menu key={menu.menuName} {...menu} />
+      ))}
+    </div>
+  );
 }
+
+export default MenuApp;
