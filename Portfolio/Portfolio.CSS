@@ -1,39 +1,75 @@
-/* Additional styles for header */
-header {
-  background-color: #F7CAC9; /* Light blush pink background */
-  color: #333; /* Dark text color */
-}
-
-/* Additional styles for main content */
-main {
-  background-color: #fff; /* White background */
-  padding-top: 50px; /* Add padding to the top */
-}
-
-/* Additional styles for footer */
-footer {
-  background-color: #F7CAC9; /* Light blush pink background */
-  color: #333; /* Dark text color */
-  padding: 20px 0; /* Add padding to top and bottom */
-}
-
 /* Additional styles for cards */
 .card {
-  background-color: #fff; /* White background */
-  border: 1px solid #f5e1da; /* Light blush pink border */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #f7dbf6;
+  border: 3px solid #e5cae3;
+  height: 100%;
 }
 
-.card-body, .card-title, .card-text {
-  color: #333; /* Dark text color */
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.card-text {
+  flex-grow: 1;
 }
 
 /* Additional styles for links */
 a {
-  color: #f58794; /* Light blush pink link color */
-  text-decoration: none; /* Remove default underline */
+  color: #f587ea;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #d46978; /* Darker blush pink color on hover */
+  color: #ae69d4;
+}
+
+/* Additional styles for Figma designs */
+.fig-card {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Additional styles for figma-design */
+.figma-design {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Additional styles for container */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-color: ;
+}
+
+/* Additional styles for iframe container */
+.iframe-container {
+  width: 240px;
+  height: 380px;
+}
+/* Additional styles for jumbotron heading */
+.jumbotron-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+.jumbotron {
+  background-color: #f8dbf6;
+}
+/* Additional styles for lead text */
+.lead {
+  font-size: 1.25rem;
+  text-align: center;
+  background-color: ;
 }
