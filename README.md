@@ -17,7 +17,7 @@ Welcome to my portfolio! This README provides an overview of the projects and ex
 
 - Description: The Todo app is a productivity tool designed to help users organize and manage their tasks effectively.
 - Technologies: React
-- [Demo](#) | [GitHub](#)
+- [Demo](https://youtu.be/RQhd_oQf6ZQ) | [GitHub](https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Todo%20App)
 
 ### 3. Quiz App
 
@@ -53,13 +53,9 @@ Welcome to my portfolio! This README provides an overview of the projects and ex
 
 ## About Me
 
-Insert a brief description of yourself and your interests here.
+I'm a student developer with a focus on creating intuitive and impactful software solutions. My interests include web and mobile application development, UI/UX design, and continuous learning.
 
 ## Contact
 
-- Email: your_email@example.com
-- GitHub: your_github_username
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Email: ThrishaArmstrong@ucf.edu
+- GitHub: th667247
