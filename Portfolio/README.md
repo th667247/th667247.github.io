@@ -53,7 +53,7 @@ Welcome to my portfolio! This README provides an overview of the projects and ex
 
 ## About Me
 
-I'm a student developer with a focus on creating intuitive and impactful software solutions. My interests include web and mobile application development, UI/UX design, and continuous learning.
+Hello, I'm Thrisha Armstrong, a Digital Media student approaching my final year of my BA program. From the early days of social media, I've been drawn to web design and am eager to embark on a career path in UI/UX design. I'm passionate about creating intuitive and visually appealing digital experiences. With skills in JavaScript, CSS, React, and API integration, I enjoy bringing designs to life and crafting seamless user interactions. My goal is to leverage these skills to contribute meaningfully to the digital landscape and push the boundaries of user-centered design. Outside of my academic pursuits, you'll often find me exploring new technologies, experimenting with design concepts, or diving into personal projects that allow me to further develop my skills. I thrive in collaborative environments where I can contribute my creativity and problem-solving abilities to deliver impactful solutions. I'm excited about the opportunities that lie ahead and am committed to continuous learning and growth in the dynamic field of digital media.
 
 ## Contact
 
