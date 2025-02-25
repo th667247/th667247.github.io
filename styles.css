@@ -1,8 +1,32 @@
-/* Additional styles for cards */
+/* Define CSS variables for consistent theming */
+:root {
+  --primary-bg: #f7dbf6;
+  --border-color: #e5cae3;
+  --link-color: #f587ea;
+  --link-hover: #ae69d4;
+  --jumbotron-bg: #f8dbf6;
+  --card-radius: 8px;
+  --transition-duration: 0.3s;
+}
+
+/* Global transition for smooth effects */
+* {
+  transition: color var(--transition-duration), background-color var(--transition-duration);
+}
+
+/* Styles for cards */
 .card {
-  background-color: #f7dbf6;
-  border: 3px solid #e5cae3;
+  background-color: var(--primary-bg);
+  border: 3px solid var(--border-color);
+  border-radius: var(--card-radius);
   height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .card-body {
@@ -10,7 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+  gap: 10px;
 }
 
 .card-title {
@@ -21,55 +45,66 @@
   flex-grow: 1;
 }
 
-/* Additional styles for links */
+/* Styles for links */
 a {
-  color: #f587ea;
+  color: var(--link-color);
   text-decoration: none;
+  transition: color var(--transition-duration);
 }
 
-a:hover {
-  color: #ae69d4;
+a:hover,
+a:focus {
+  color: var(--link-hover);
 }
 
-/* Additional styles for Figma designs */
+a:focus {
+  outline: 2px dashed var(--link-hover);
+  outline-offset: 4px;
+}
+.figma-row {
+  margin-top: 40px; /* Adjust the value as needed */
+}
+/* Styles for Figma designs */
 .fig-card {
   display: block;
   margin-bottom: 20px;
 }
 
-/* Additional styles for figma-design */
 .figma-design {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px; /* Provides spacing between design cards */
 }
 
-/* Additional styles for container */
+/* Styles for container */
 .container {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 15px;
-  background-color: ;
+
 }
 
-/* Additional styles for iframe container */
+/* Styles for iframe container */
 .iframe-container {
   width: 240px;
   height: 380px;
 }
-/* Additional styles for jumbotron heading */
+
+/* Styles for jumbotron heading */
 .jumbotron-heading {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  
 }
+
 .jumbotron {
-  background-color: #f8dbf6;
+  background-color: var(--jumbotron-bg);
 }
-/* Additional styles for lead text */
+
+/* Styles for lead text */
 .lead {
   font-size: 1.25rem;
   text-align: center;
-  background-color: ;
+  /* background-color: transparent; */
 }

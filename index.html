@@ -2,108 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico" />
-
-    <title>Portfolio</title>
-
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.0/examples/album/"
-    />
-
-    <!-- Bootstrap core CSS -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Custom styles for this template -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Thrisha Armstrong's portfolio showcasing digital media projects, web design, and UI/UX work." />
+    <meta name="author" content="Thrisha Armstrong" />
+    <link rel="icon" href="/path/to/your/favicon.ico" />
+    <title>Thrisha Armstrong | Digital Media & UI/UX Designer</title>
+    <!-- Updated Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
   </head>
-
   <body>
     <header>
+      <!-- Collapsible navbar header -->
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <div class="iframe-container">
-                <iframe src="https://drive.google.com/file/d/1k1iwdKia96W2f9EqqmUMLq551NWzCHVT/preview" width="240" height="380" allow="autoplay"></iframe>
+              <div class="mb-4">
+                <img src="Thrisha.jpg" alt="Portrait of Thrisha Armstrong" class="img-fluid" loading="lazy">
               </div>
-              <h4 class="text-white">About</h4>
-             
-              <p class="text-muted">
-                Hello, I'm Thrisha Armstrong, a Digital Media student approaching my final year of my BA program. From the early days of social media, I've been drawn to web design and am eager to embark on a career path in UI/UX design.
-
-                I'm passionate about creating intuitive and visually appealing digital experiences. With skills in JavaScript, CSS, React, and API integration, I enjoy bringing designs to life and crafting seamless user interactions. My goal is to leverage these skills to contribute meaningfully to the digital landscape and push the boundaries of user-centered design.
-                
-                Outside of my academic pursuits, you'll often find me exploring new technologies, experimenting with design concepts, or diving into personal projects that allow me to further develop my skills. I thrive in collaborative environments where I can contribute my creativity and problem-solving abilities to deliver impactful solutions.
-                
-                I'm excited about the opportunities that lie ahead and am committed to continuous learning and growth in the dynamic field of digital media.
-              </p>
-              <p class="text-muted">
-                Email:
-                <a href="mailto:ThrishaArmstrong@ucf.edu"
-                  >ThrishaArmstrong@ucf.edu</a
-                >
-              </p>
-              <p class="text-muted">
-                GitHub: <a href="https://github.com/th667247">th667247</a>
-              </p>
+              <section id="about" class="text-white">
+                <h2 class="text-center mb-4">About Me</h2>
+                <div class="row justify-content-center">
+                  <div class="col-md-10">
+                    <p>
+                      I’m Thrisha Armstrong, a Digital Media student in my final year of my BA program. Ever since the early days of social media, I’ve been captivated by web design and excited to pursue a career in UI/UX design.
+                    </p>
+                    <p>
+                      I’m passionate about creating intuitive, visually appealing digital experiences. With skills in JavaScript, CSS, React, and API integration, I love transforming creative ideas into seamless user interactions that truly engage.
+                    </p>
+                    <p>
+                      Beyond my academic work, I enjoy exploring new technologies, experimenting with design concepts, and diving into personal projects that push the boundaries of user-centered design. I thrive in collaborative environments and am dedicated to continuous learning and growth in the dynamic field of digital media.
+                    </p>
+                  </div>
+                </div>
+              </section>
+              <div class="mt-3">
+                <p class="text-muted">
+                  Email: <a href="mailto:ThrishaArmstrong@hotmail.com" class="text-muted">ThrishaArmstrong@hotmail.com</a>
+                </p>
+                <p class="text-muted">
+                  GitHub: <a href="https://github.com/th667247" class="text-muted">th667247</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mr-2"
-            >
-              <path
-                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
-              ></path>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
               <circle cx="12" cy="13" r="4"></circle>
             </svg>
             <strong>Portfolio</strong>
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarHeader"
-            aria-controls="navbarHeader"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </div>
     </header>
 
-    <main role="main">
-      <section class="jumbotron text-center">
+    <main>
+      <section class="jumbotron text-center py-5 bg-light">
         <div class="container">
           <h1 class="jumbotron-heading">Portfolio Showcase</h1>
-          <p class="lead text-muted">
-            Welcome to my React Native Portfolio. Below are some of the projects and exercises I've worked on for DIG4639C: Mobile Development.
-          </p>
+          <p class="lead text-muted">Welcome to my Portfolio.</p>
         </div>
       </section>
 
@@ -113,14 +81,11 @@
           <div class="row">
             <!-- Project: Exercise App -->
             <div class="col-md-3">
-              
-              <div class="card mb-4 box-shadow">
-                
-                <div class="card-body">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Exercise App</h5>
                   <p class="card-text">
-                    The Exercise App, built with React, is a fitness application
-                    designed to help users time, track, and achieve their workout goals.
+                    The Exercise App, built with React, is a fitness application designed to help users time, track, and achieve their workout goals.
                   </p>
                   <p class="card-text"><strong>Features:</strong></p>
                   <ul class="card-text">
@@ -128,13 +93,10 @@
                     <li>Exercise Tracking: Monitor reps and exercise durations.</li>
                   </ul>
                   <p class="card-text">
-                    <strong>Encountered Challenge:</strong> Troubleshooting the
-                    stopwatch functionality revealed the need for a dedicated function
-                    to ensure precise time formatting.
+                    <strong>Encountered Challenge:</strong> Troubleshooting the stopwatch functionality revealed the need for a dedicated function to ensure precise time formatting.
                   </p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <!-- Add links to demo and GitHub -->
                       <a href="https://youtu.be/Ys4N5F5gD_g" class="btn btn-sm btn-outline-secondary">View Demo</a>
                       <a href="https://github.com/th667247/th667247.github.io/tree/22cd2ab21bed33aa3a6656c6cdbf01009c23b8eb/Projects/Exercise%20App" class="btn btn-sm btn-outline-secondary">GitHub</a>
                     </div>
@@ -143,15 +105,13 @@
                 </div>
               </div>
             </div>
-      
             <!-- Project: Todo App -->
             <div class="col-md-3">
-              <div class="card mb-4 box-shadow">
-                <div class="card-body">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Todo App</h5>
                   <p class="card-text">
-                    The Todo App is a productivity tool designed for effective task
-                    organization and management.
+                    The Todo App is a productivity tool designed for effective task organization and management.
                   </p>
                   <p class="card-text"><strong>Features:</strong></p>
                   <ul class="card-text">
@@ -160,14 +120,10 @@
                     <li>Task Tracking: Create, edit, delete, and mark tasks as complete.</li>
                   </ul>
                   <p class="card-text">
-                    <strong>Encountered Challenge:</strong> Integrating user authentication,
-                    registration, and task tracking into one project proved challenging.
-                    Implementing a menu page was the most straightforward solution to
-                    demonstrate the project's functionality.
+                    <strong>Encountered Challenge:</strong> Integrating user authentication, registration, and task tracking into one project proved challenging. Implementing a menu page was the most straightforward solution to demonstrate the project's functionality.
                   </p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <!-- Add links to demo and GitHub -->
                       <a href="https://youtu.be/RQhd_oQf6ZQ" class="btn btn-sm btn-outline-secondary">View Demo</a>
                       <a href="https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Todo%20App" class="btn btn-sm btn-outline-secondary">GitHub</a>
                     </div>
@@ -178,31 +134,22 @@
             </div>
             <!-- Project: Quiz App -->
             <div class="col-md-3">
-              <div class="card mb-4 box-shadow">
-                <div class="card-body">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Quiz App</h5>
                   <p class="card-text">
-                    The Quiz App, built with React Native, offers users a straightforward
-                    and engaging platform to take quizzes. It incorporates a Question
-                    component that supports various answer types, including true/false,
-                    multiple choice, and multiple answers.
+                    The Quiz App, built with React Native, offers users a straightforward and engaging platform to take quizzes. It incorporates a Question component that supports various answer types, including true/false, multiple choice, and multiple answers.
                   </p>
                   <p class="card-text"><strong>Features:</strong></p>
                   <ul class="card-text">
                     <li>Questionnaire: Supports true/false, multiple-choice, and multiple-answer formats.</li>
-                    
                     <li>Results: Provides quiz results.</li>
                   </ul>
                   <p class="card-text">
-                    <strong>Encountered Challenge:</strong> One challenge was handling
-                    multiple answers in the multiple-choice questions. This required
-                    separating the functionality to ensure correct behavior. Additionally,
-                    there were issues with including true/false responses in the results,
-                    which needed resolution.
+                    <strong>Encountered Challenge:</strong> Handling multiple answers in multiple-choice questions required separate functionality to ensure correct behavior, with extra handling for true/false responses.
                   </p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <!-- Add links to demo and GitHub -->
                       <a href="https://youtu.be/MS_X9cu9L2U" class="btn btn-sm btn-outline-secondary">View Demo</a>
                       <a href="https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Quiz%20App" class="btn btn-sm btn-outline-secondary">GitHub</a>
                     </div>
@@ -211,33 +158,24 @@
                 </div>
               </div>
             </div>
-      
             <!-- Project: Menu App -->
             <div class="col-md-3">
-              <div class="card mb-4 box-shadow">
-                <div class="card-body">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Menu App</h5>
                   <p class="card-text">
-                    The Menu App is a user-friendly application designed to provide
-                    users with a seamless experience in exploring a menu that includes
-                    item ID, item price, item name, and item description.
+                    The Menu App is a user-friendly application designed to provide users with a seamless experience in exploring a menu that includes item ID, item price, item name, and item description.
                   </p>
                   <p class="card-text"><strong>Features:</strong></p>
                   <ul class="card-text">
-                    <li>Menu Display: Users can easily view the menu items presented in a structured layout, making it convenient to browse through different options.</li>
-                    <li>Detailed Information: Each menu item includes essential details such as item ID, price, name, and a brief description, allowing users to make informed decisions.</li>
+                    <li>Menu Display: Structured layout for browsing different options.</li>
+                    <li>Detailed Information: Provides item ID, price, name, and a brief description.</li>
                   </ul>
                   <p class="card-text">
-                    <strong>Encountered Challenge:</strong> One notable challenge during
-                    the development process was encountering errors related to the menuData
-                    structure. Initially, the data was not recognized as an array, resulting
-                    in unexpected behavior within the application. However, through careful
-                    debugging and restructuring of the data, this issue was successfully
-                    resolved, ensuring the smooth functioning of the app.
+                    <strong>Encountered Challenge:</strong> Errors with the menuData structure required careful debugging and restructuring for smooth functionality.
                   </p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <!-- Add links to demo and GitHub -->
                       <a href="https://youtu.be/W3-R5l-Acl4" class="btn btn-sm btn-outline-secondary">View Demo</a>
                       <a href="https://github.com/th667247/th667247.github.io/tree/60dc58965bc56a20376f30d1ece25a65f96b0d39/Projects/Menu%20App" class="btn btn-sm btn-outline-secondary">GitHub</a>
                     </div>
@@ -246,195 +184,110 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-            <!-- Projects Row: Figma Designs -->
-            <div class="row">
-              <!-- Project: Exercise Design -->
-              <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                  <iframe
-                    src="https://drive.google.com/file/d/1tSQ48Pw9VwwFoYIca7wnjES0HRJEcwo_/preview"
-                    width="100%"
-                    height="200"
-                    allow="autoplay"
-                  ></iframe>
-                  <div class="card-body">
-                    <h5 class="card-title">Exercise Design</h5>
-                    <p class="card-text">
-                      Crafted in Figma, the Exercise Design embodies a modern
-                      and vibrant aesthetic, aimed at delivering an engaging
-                      fitness experience.
-                    </p>
-                    <p class="card-text"><strong>Features:</strong></p>
-                    <ul class="card-text">
-                      <li>
-                        Exercises: Explore a variety of exercises categorized
-                        for different muscle groups and fitness levels.
-                      </li>
-                      <li>
-                        Timer: Utilize a built-in timer feature to track
-                        exercise duration and rest intervals seamlessly.
-                      </li>
-                      <li>
-                        Tracking: Monitor your progress with comprehensive
-                        tracking functionality, including workout history and
-                        performance metrics.
-                      </li>
-                      <li>
-                        Goals: Set personalized fitness goals and track your
-                        journey towards achieving them.
-                      </li>
-                    </ul>
-                    <p class="card-text">
-                      <strong>Design Approach:</strong> Utilizing bold and
-                      bright colors against a dark background, the design exudes
-                      a contemporary and appealing vibe, perfectly suited for a
-                      fitness-focused application.
-                    </p>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <!-- Add links to demo and GitHub -->
-                        <a
-                          href="https://drive.google.com/file/d/1tSQ48Pw9VwwFoYIca7wnjES0HRJEcwo_/preview"
-                          class="btn btn-sm btn-outline-secondary"
-                          >View Design</a
-                        >
-                        <a
-                          href="https://github.com/th667247/th667247.github.io/tree/6bfcae0e077ae9f257ac7068a731f627e29cba43/Projects/Exercise%20Design"
-                          class="btn btn-sm btn-outline-secondary"
-                          >GitHub</a
-                        >
-                      </div>
-                      <small class="text-muted">Figma</small>
+          </div> <!-- End projects row -->
+          
+          <!-- Projects Row: Figma Designs -->
+          <div class="row figma-row">
+            <!-- Project: Exercise Design -->
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <iframe src="https://drive.google.com/file/d/1tSQ48Pw9VwwFoYIca7wnjES0HRJEcwo_/preview" width="100%" height="200" allow="autoplay"></iframe>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Exercise Design</h5>
+                  <p class="card-text">
+                    Crafted in Figma, the Exercise Design embodies a modern and vibrant aesthetic, aimed at delivering an engaging fitness experience.
+                  </p>
+                  <p class="card-text"><strong>Features:</strong></p>
+                  <ul class="card-text">
+                    <li>Exercises: Explore a variety of exercises for different muscle groups.</li>
+                    <li>Timer: Built-in timer to track duration and rest intervals.</li>
+                    <li>Tracking: Comprehensive workout history and performance metrics.</li>
+                    <li>Goals: Personalized fitness goals and progress tracking.</li>
+                  </ul>
+                  <p class="card-text">
+                    <strong>Design Approach:</strong> Bold colors against a dark background create a contemporary, appealing vibe.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/file/d/1tSQ48Pw9VwwFoYIca7wnjES0HRJEcwo_/preview" class="btn btn-sm btn-outline-secondary">View Design</a>
+                      <a href="https://github.com/th667247/th667247.github.io/tree/6bfcae0e077ae9f257ac7068a731f627e29cba43/Projects/Exercise%20Design" class="btn btn-sm btn-outline-secondary">GitHub</a>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Project: Todo Design -->
-              <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                  <iframe
-                    src="https://drive.google.com/file/d/1W5I8CVEUMRSNiGySgw6VYh9ZJl0Vk0Zc/preview"
-                    width="100%"
-                    height="200"
-                    allow="autoplay"
-                  ></iframe>
-                  <div class="card-body">
-                    <h5 class="card-title">Todo Design</h5>
-                    <p class="card-text">
-                      Developed in Figma, the Todo Design prioritizes simplicity
-                      and functionality.
-                    </p>
-                    <p class="card-text"><strong>Features:</strong></p>
-                    <ul class="card-text">
-                      <li>Task creation, deletion, and completion.</li>
-                      <li>Task list management with deadlines.</li>
-                      <li>
-                        User identity management, including login and sign-out
-                        functionality.
-                      </li>
-                      <li>Tracking of completed tasks.</li>
-                    </ul>
-                    <p class="card-text">
-                      <strong>Design Approach:</strong> Utilizes a simple,
-                      modern, and clean design aesthetic with a focus on user
-                      ease-of-use. The color palette predominantly consists of
-                      white, black, and grays, with occasional pops of color for
-                      visual diversity.
-                    </p>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <!-- Add links to demo and GitHub -->
-                        <a
-                          href="https://drive.google.com/file/d/1W5I8CVEUMRSNiGySgw6VYh9ZJl0Vk0Zc/view"
-                          class="btn btn-sm btn-outline-secondary"
-                          >View Design</a
-                        >
-                        <a
-                          href="https://github.com/th667247/th667247.github.io/tree/6bfcae0e077ae9f257ac7068a731f627e29cba43/Projects/Todo%20Design"
-                          class="btn btn-sm btn-outline-secondary"
-                          >GitHub</a
-                        >
-                      </div>
-                      <small class="text-muted">Figma</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Project: Flash Card App Design -->
-              <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                  <iframe
-                    src="https://drive.google.com/file/d/1KpcFLBYGL26iRVhPe5LcGme7NiNoSA6X/preview"
-                    width="100%"
-                    height="200"
-                    allow="autoplay"
-                  ></iframe>
-                  <div class="card-body">
-                    <h5 class="card-title">Flash Card App Design</h5>
-                    <p class="card-text">
-                      Crafted in Figma, the Flash Card Design offers an
-                      intuitive layout for effective learning.
-                    </p>
-                    <p class="card-text"><strong>Features:</strong></p>
-                    <ul class="card-text">
-                      <li>Create, edit, and delete flashcards and sets.</li>
-                      <li>Filter options for sets.</li>
-                      <li>Track completion status of decks.</li>
-                      <li>Tracking of completed tasks.</li>
-                    </ul>
-                    <p class="card-text">
-                      <strong>Design Approach:</strong> Utilizes bright accent
-                      colors for highlights and a simple format for easy
-                      usability.
-                    </p>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <!-- Add links to demo and GitHub -->
-                        <a
-                          href="https://drive.google.com/file/d/1KpcFLBYGL26iRVhPe5LcGme7NiNoSA6X/preview"
-                          class="btn btn-sm btn-outline-secondary"
-                          >View Design</a
-                        >
-                        <a
-                          href="https://github.com/th667247/th667247.github.io/tree/6bfcae0e077ae9f257ac7068a731f627e29cba43/Projects/Flash%20Card%20App%20Design"
-                          class="btn btn-sm btn-outline-secondary"
-                          >GitHub</a
-                        >
-                      </div>
-                      <small class="text-muted">Figma</small>
-                    </div>
+                    <small class="text-muted">Figma</small>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Repeat for other projects -->
-          </div>
+            <!-- Project: Todo Design -->
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <iframe src="https://drive.google.com/file/d/1W5I8CVEUMRSNiGySgw6VYh9ZJl0Vk0Zc/preview" width="100%" height="200" allow="autoplay"></iframe>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Todo Design</h5>
+                  <p class="card-text">
+                    Developed in Figma, the Todo Design prioritizes simplicity and functionality.
+                  </p>
+                  <p class="card-text"><strong>Features:</strong></p>
+                  <ul class="card-text">
+                    <li>Task creation, deletion, and completion.</li>
+                    <li>Task list management with deadlines.</li>
+                    <li>User identity management including login and sign-out.</li>
+                    <li>Tracking of completed tasks.</li>
+                  </ul>
+                  <p class="card-text">
+                    <strong>Design Approach:</strong> A clean, modern aesthetic with a balanced color palette and accent colors for visual interest.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/file/d/1W5I8CVEUMRSNiGySgw6VYh9ZJl0Vk0Zc/view" class="btn btn-sm btn-outline-secondary">View Design</a>
+                      <a href="https://github.com/th667247/th667247.github.io/tree/6bfcae0e077ae9f257ac7068a731f627e29cba43/Projects/Todo%20Design" class="btn btn-sm btn-outline-secondary">GitHub</a>
+                    </div>
+                    <small class="text-muted">Figma</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project: Flash Card App Design -->
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <iframe src="https://drive.google.com/file/d/1KpcFLBYGL26iRVhPe5LcGme7NiNoSA6X/preview" width="100%" height="200" allow="autoplay"></iframe>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Flash Card App Design</h5>
+                  <p class="card-text">
+                    Crafted in Figma, the Flash Card Design offers an intuitive layout for effective learning.
+                  </p>
+                  <p class="card-text"><strong>Features:</strong></p>
+                  <ul class="card-text">
+                    <li>Create, edit, and delete flashcards and sets.</li>
+                    <li>Filter options for sets.</li>
+                    <li>Track completion status of decks.</li>
+                    <li>Tracking of completed tasks.</li>
+                  </ul>
+                  <p class="card-text">
+                    <strong>Design Approach:</strong> Uses bright accent colors and a streamlined layout for enhanced usability.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/file/d/1KpcFLBYGL26iRVhPe5LcGme7NiNoSA6X/preview" class="btn btn-sm btn-outline-secondary">View Design</a>
+                      <a href="https://github.com/th667247/th667247.github.io/tree/6bfcae0e077ae9f257ac7068a731f627e29cba43/Projects/Flash%20Card%20App%20Design" class="btn btn-sm btn-outline-secondary">GitHub</a>
+                    </div>
+                    <small class="text-muted">Figma</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Figma designs row -->
         </div>
       </div>
     </main>
 
-    <footer class="text-muted">
+    <footer class="text-muted py-4">
       <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Thrisha Armstrong&copy; 2024</p>
+        <p class="mb-0 text-end"><a href="#">Back to top</a></p>
+        <p class="mb-0">Thrisha Armstrong &copy; 2024</p>
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Bundle with Popper (Bootstrap 5) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
