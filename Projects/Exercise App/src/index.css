@@ -3,10 +3,14 @@
   text-align: center;
   padding: 20px;
 }
+p {
+  text-align: center;
+  padding: 20px;
+}
 
 /* Header styling */
 .App-header {
-  background-color: #282c34;
+  background-color: #9cb4e3;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,14 +38,14 @@ button {
   min-height: 50px; /* Ensure minimum height */
   border: none;
   border-radius: 10px;
-  background-color: #007bff;
+  background-color: #2c7a19;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #3ca323;
 }
 
 button:active {

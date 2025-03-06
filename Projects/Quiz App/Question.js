@@ -1,6 +1,4 @@
-// Question & Quiz
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { CheckBox } from "react-native-elements";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -9,71 +7,54 @@ const Question = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { questions } = route.params;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState(
-    Array(questions[currentIndex].choices.length).fill(false)
+    new Array(questions[0].choices.length).fill(false)
   );
-  const [answers, setAnswers] = useState(Array(questions.length).fill([]));
-
-  const nextQuestion = () => {
-    if (currentIndex < questions.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      setSelectedAnswers(
-        Array(questions[currentIndex + 1].choices.length).fill(false)
-      );
-    } else {
-      navigation.navigate("Summary", { questions, answers });
-    }
-  };
+  const [answers, setAnswers] = useState(new Array(questions.length).fill([]));
+  const [quizFinished, setQuizFinished] = useState(false);
 
   const handleAnswerSelection = (index) => {
-    if (
-      questions[currentIndex].type === "true-false" ||
-      questions[currentIndex].type === "multiple-choice"
-    ) {
-      setSelectedAnswers(
-        Array(questions[currentIndex].choices.length).fill(false)
-      );
-      setSelectedAnswers((prevState) => {
-        const newState = [...prevState];
-        newState[index] = true;
-        return newState;
-      });
-    } else {
-      const newSelectedAnswers = [...selectedAnswers];
-      newSelectedAnswers[index] = !newSelectedAnswers[index];
-      setSelectedAnswers(newSelectedAnswers);
-    }
+    setSelectedAnswers((prevState) => {
+      const newState =
+        questions[currentIndex].type === "multiple-answer"
+          ? [...prevState]
+          : new Array(prevState.length).fill(false);
+      newState[index] = !newState[index];
+      return newState;
+    });
   };
 
   const submitAnswer = () => {
-    if (
-      questions[currentIndex].type === "true-false" ||
-      questions[currentIndex].type === "multiple-choice"
-    ) {
-      const chosenAnswer = selectedAnswers.findIndex(
-        (isSelected) => isSelected
-      );
-      setAnswers((prevState) => {
-        const newState = [...prevState];
-        newState[currentIndex] = [chosenAnswer];
-        return newState;
+    const chosenAnswers = selectedAnswers
+      .map((isSelected, index) => (isSelected ? index : null))
+      .filter((index) => index !== null);
+
+    setAnswers((prevState) => {
+      const newState = [...prevState];
+      newState[currentIndex] = chosenAnswers;
+      return newState;
+    });
+
+    if (currentIndex < questions.length - 1) {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex + 1;
+        setSelectedAnswers(
+          new Array(questions[nextIndex].choices.length).fill(false)
+        );
+        return nextIndex;
       });
     } else {
-      const chosenAnswers = selectedAnswers.reduce((acc, isSelected, index) => {
-        if (isSelected) {
-          acc.push(index);
-        }
-        return acc;
-      }, []);
-      setAnswers((prevState) => {
-        const newState = [...prevState];
-        newState[currentIndex] = chosenAnswers;
-        return newState;
-      });
+      setQuizFinished(true);
     }
-    nextQuestion();
   };
+
+  useEffect(() => {
+    if (quizFinished) {
+      navigation.navigate("Summary", { questions, answers });
+    }
+  }, [quizFinished, answers]);
 
   return (
     <View style={styles.container}>
@@ -89,7 +70,9 @@ const Question = () => {
         />
       ))}
       <Button
-        title="Next Question"
+        title={
+          currentIndex < questions.length - 1 ? "Next Question" : "Finish Quiz"
+        }
         onPress={submitAnswer}
         disabled={!selectedAnswers.includes(true)}
         testID="next-question"
@@ -103,20 +86,49 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#f4f4f8",
+    padding: 20,
   },
   question: {
-    fontSize: 20,
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#333",
     marginBottom: 20,
+    textAlign: "center",
+    paddingHorizontal: 15,
+    backgroundColor: "#ffffff",
+    paddingVertical: 15,
+    borderRadius: 10,
+    elevation: 3,
   },
   checkBoxContainer: {
-    backgroundColor: "transparent",
-    borderWidth: 0,
-    marginLeft: 0,
-    marginRight: 0,
+    backgroundColor: "#ffffff",
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 10,
+    width: "90%",
+    paddingVertical: 10,
     marginBottom: 10,
+    elevation: 3,
   },
   checkBoxText: {
     fontSize: 18,
+    fontWeight: "500",
+    color: "#444",
+  },
+  button: {
+    marginTop: 20,
+    backgroundColor: "#4CAF50",
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 8,
+    elevation: 3,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
   },
 });
 

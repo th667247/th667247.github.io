@@ -8,17 +8,27 @@ export default function LoginScreen({ navigation }) {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = async () => {
-    const loginDataString = await AsyncStorage.getItem("loginData");
-    const loginData = JSON.parse(loginDataString) || [];
+    if (!username || !password) {
+      setErrorMessage("Username and password are required");
+      return;
+    }
 
-    const user = loginData.find(
-      (user) => user.username === username && user.password === password
-    );
+    try {
+      const loginDataString = await AsyncStorage.getItem("loginData");
+      const loginData = JSON.parse(loginDataString) || [];
 
-    if (user) {
-      navigation.navigate("TodoApp");
-    } else {
-      setErrorMessage("Invalid username or password");
+      const user = loginData.find(
+        (user) => user.username === username && user.password === password
+      );
+
+      if (user) {
+        navigation.navigate("TodoApp");
+      } else {
+        setErrorMessage("Invalid username or password");
+      }
+    } catch (error) {
+      console.error("Error accessing AsyncStorage", error);
+      setErrorMessage("An error occurred, please try again later");
     }
   };
 
@@ -27,14 +37,18 @@ export default function LoginScreen({ navigation }) {
       <View style={styles.box}>
         <Input
           testID="login-username"
-          placeholder="Login"
+          placeholder="Username"
           onChangeText={(text) => setUsername(text)}
+          value={username}
+          containerStyle={styles.input}
         />
         <Input
           testID="login-password"
           placeholder="Password"
           secureTextEntry={true}
           onChangeText={(text) => setPassword(text)}
+          value={password}
+          containerStyle={styles.input}
         />
         {errorMessage ? (
           <Text style={styles.errorMessage}>{errorMessage}</Text>
@@ -63,9 +77,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 10,
     alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5, // for Android
+  },
+  input: {
+    marginBottom: 15,
   },
   errorMessage: {
     color: "red",
     marginBottom: 10,
+    fontSize: 14,
   },
 });

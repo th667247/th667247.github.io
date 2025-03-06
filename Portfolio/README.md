@@ -25,12 +25,6 @@ Welcome to my portfolio! This README provides an overview of the projects and ex
 - Technologies: React Native
 - [Demo](#) | [GitHub](#)
 
-### 4. Menu App
-
-- Description: The Menu App is a React-based application designed to create a dynamic menu page.
-- Technologies: React
-- [Demo](#) | [GitHub](#)
-
 ## Exercises
 
 ### 1. Flash Card Design

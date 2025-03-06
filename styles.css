@@ -1,110 +1,290 @@
-/* Define CSS variables for consistent theming */
-:root {
-  --primary-bg: #f7dbf6;
-  --border-color: #e5cae3;
-  --link-color: #f587ea;
-  --link-hover: #ae69d4;
-  --jumbotron-bg: #f8dbf6;
-  --card-radius: 8px;
-  --transition-duration: 0.3s;
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+@import url("fontawesome-all.min.css");
+
+/* Reset Styles */
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-/* Global transition for smooth effects */
-* {
-  transition: color var(--transition-duration), background-color var(--transition-duration);
+/* Body Styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14pt;
+  line-height: 1.65;
+  color: #7f888f;
+  background: #ffffff;
 }
 
-/* Styles for cards */
+/* Layout */
+#wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  min-height: 100vh;
+}
+
+#main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.inner {
+  padding: 4em;
+  max-width: 110em;
+  margin: auto;
+}
+
+/* Header */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+  border-bottom: 5px solid #f5b3d8;
+}
+
+.logo {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-decoration: none;
+  color: #3d4449;
+}
+
+/* Banner */
+#banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4em 0;
+}
+
+#banner .content {
+  max-width: 100%;
+}
+
+#banner .image img {
+  width: 75%;
+  border-radius: 10px;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.features article {
+  flex: 1 1 calc(33.333% - 2em);
+  display: flex;
+  align-items: center;
+  padding: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 24em;
+  background: #f5f6f7;
+  padding: 2em;
+}
+
+/* Project Grid Layout*/
+#projects {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 20px;
+}
+
 .card {
-  background-color: var(--primary-bg);
-  border: 3px solid var(--border-color);
-  border-radius: var(--card-radius);
-  height: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  break-inside: avoid; /* Prevents breaking inside columns */
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
 }
 
-.card-body {
+.card img {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.card-info {
+  text-align: center;
+  padding: 10px;
+}
+
+.card-info h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Responsive Grid */
+@media screen and (max-width: 980px) {
+  #projects {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #projects {
+    column-count: 1;
+  }
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+  font-size: 1em;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Layout Tweaks */
+@media screen and (max-width: 980px) {
+  #wrapper {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    width: 100%;
+    padding: 1.5em;
+  }
+
+  .inner {
+    padding: 2em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .features {
+    flex-direction: column;
+  }
+
+  .features article {
+    flex: 1 1 100%;
+  }
+}
+
+/* Tab Content Visibility */
+.tab-content {
+  display: none; /* Hide all sections by default */
   padding: 20px;
+}
+
+.tab-content.active {
+  display: block; /* Show only active section */
+}
+
+/* Menu */
+#menu ul {
+  display: flex;
+  list-style: none;
+  padding: 10px;
+  background: #f5f5f5;
+}
+
+#menu ul li {
+  margin-right: 20px;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Project Details Sidebar */
+#project-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Hidden initially */
+  width: 1000px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+  z-index: 1000; /* Ensures it appears above projects */
+  overflow-y: auto; /* Enables scrolling if content overflows */
+  visibility: hidden; /* Fully hides sidebar until opened */
 }
 
-.card-title {
-  margin-bottom: 10px;
-}
-
-.card-text {
+/* Make sure sidebar content is visible */
+#sidebar-content {
   flex-grow: 1;
+  padding-top: 10px;
+  overflow-y: auto;
 }
 
-/* Styles for links */
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color var(--transition-duration);
-}
-
-a:hover,
-a:focus {
-  color: var(--link-hover);
-}
-
-a:focus {
-  outline: 2px dashed var(--link-hover);
-  outline-offset: 4px;
-}
-.figma-row {
-  margin-top: 40px; /* Adjust the value as needed */
-}
-/* Styles for Figma designs */
-.fig-card {
-  display: block;
-  margin-bottom: 20px;
-}
-
-.figma-design {
+/* Ensure the close button is positioned properly */
+#sidebar-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Provides spacing between design cards */
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f5b3d8;
+  padding-bottom: 10px;
 }
 
-/* Styles for container */
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 15px;
-
+/* Close button styling */
+#close-sidebar {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
-/* Styles for iframe container */
-.iframe-container {
-  width: 240px;
-  height: 380px;
+/* Sidebar Tabs */
+#sidebar-tabs {
+  display: flex;
+  margin-top: 10px;
 }
 
-/* Styles for jumbotron heading */
-.jumbotron-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: #f5f5f5;
 }
 
-.jumbotron {
-  background-color: var(--jumbotron-bg);
+.tab-button.active {
+  background: #007bff;
+  color: white;
 }
 
-/* Styles for lead text */
-.lead {
-  font-size: 1.25rem;
-  text-align: center;
-  /* background-color: transparent; */
+/* Responsive Sidebar */
+@media screen and (max-width: 768px) {
+  #project-sidebar {
+    width: 100%; /* Full width on smaller screens */
+    right: -100%; /* Fully hides it */
+  }
 }

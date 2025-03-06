@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Button } from "react-native";
+import { View, Button, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import TodoApp from "./TodoApp";
 import LoginScreen from "./LoginScreen";
 import RegistrationScreen from "./RegistrationScreen";
 
+// Create a Stack navigator
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -15,7 +16,7 @@ export default function App() {
         <Stack.Screen
           name="Menu"
           component={Menu}
-          options={{ title: "Menu" }}
+          options={{ title: "Main Menu" }}
         />
         <Stack.Screen
           name="Login"
@@ -25,7 +26,7 @@ export default function App() {
         <Stack.Screen
           name="Registration"
           component={RegistrationScreen}
-          options={{ title: "Registration" }}
+          options={{ title: "Register" }}
         />
         <Stack.Screen
           name="Todo"
@@ -39,7 +40,7 @@ export default function App() {
 
 function Menu({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View style={styles.container}>
       <Button title="Login" onPress={() => navigation.navigate("Login")} />
       <Button
         title="Registration"
@@ -49,3 +50,14 @@ function Menu({ navigation }) {
     </View>
   );
 }
+
+// Styles extracted for maintainability
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+    gap: 10,
+  },
+});

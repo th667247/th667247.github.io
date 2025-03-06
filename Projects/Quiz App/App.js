@@ -6,31 +6,57 @@ import Summary from "./Summary";
 
 const Stack = createStackNavigator();
 
+// Web Design Quiz Questions
 const questions = [
   {
-    prompt: "Which color is a primary color?",
+    prompt: "What does HTML stand for?",
     type: "multiple-choice",
-    choices: ["Red", "Green", "Yellow", "Blue"],
-    correct: 3, // correct answer is Blue
+    choices: [
+      "HyperText Markup Language",
+      "Hyperlink and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Transfer Markup Language",
+    ],
+    correct: 0, // Correct answer is "HyperText Markup Language"
   },
   {
-    prompt: "Which colors make purple?",
+    prompt: "Which of these are valid CSS properties?",
     type: "multiple-answer",
-    choices: ["Red", "Green", "Yellow", "Blue"],
-    correct: [0, 3], // correct answers are Red and Blue
+    choices: ["color", "font-size", "potato", "margin"],
+    correct: [0, 1, 3], // "color", "font-size", and "margin" are valid
   },
   {
-    prompt: "Is black a color?",
+    prompt: "Is CSS used for styling a website?",
     type: "true-false",
     choices: ["True", "False"],
-    correct: 1, // correct answer is True, made the array equal to 1 because 0 was coming in as false, couldnt figure it out :)
+    correct: 0, // True
+  },
+  {
+    prompt: "Which HTML tag is used to create a hyperlink?",
+    type: "multiple-choice",
+    choices: ["<a>", "<link>", "<href>", "<hyper>"],
+    correct: 0, // "<a>"
+  },
+  {
+    prompt: "Which of the following are common web design best practices?",
+    type: "multiple-answer",
+    choices: [
+      "Using clear navigation",
+      "Adding flashy animations everywhere",
+      "Making the site mobile-friendly",
+      "Using readable fonts",
+    ],
+    correct: [0, 2, 3], // Clear navigation, mobile-friendly, and readable fonts are best practices
   },
 ];
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Question">
+      <Stack.Navigator
+        initialRouteName="Question"
+        screenOptions={{ headerShown: false }} // Hide default headers for cleaner UI
+      >
         <Stack.Screen
           name="Question"
           component={Question}
