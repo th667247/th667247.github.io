@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="project-details">
+      <h1 id="project-title"></h1>
+      <img id="project-image" src="" alt="Project Image" />
+
+      <h2>Overview</h2>
+      <p id="project-description"></p>
+
+      <h2>Reason for the Project</h2>
+      <p id="project-reason"></p>
+
+      <h2>Issues Encountered</h2>
+      <p id="project-challenges"></p>
+
+      <h2>Project Goal</h2>
+      <p id="project-goal"></p>
+
+      <h2>Different Versions</h2>
+      <p id="project-versions"></p>
+
+      <h2>Process & Approach</h2>
+      <p id="project-process"></p>
+
+      <h2>Final Implementation</h2>
+      <p id="project-final"></p>
+
+      <h2>Tech Used</h2>
+      <p id="project-tech"></p>
+
+      <div id="project-links">
+        <a id="project-demo" href="#" target="_blank">Live Demo</a>
+        <a id="project-github" href="#" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get("id");
+
+        fetch("db.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const project = data.projects.find((p) => p.id == projectId);
+            if (project) {
+              document.getElementById("project-title").innerText =
+                project.title;
+              document.getElementById("project-image").src = project.image;
+              document.getElementById("project-description").innerText =
+                project.description;
+              document.getElementById("project-reason").innerText =
+                project.reason || "Not provided.";
+              document.getElementById("project-challenges").innerText =
+                project.challenge || "Not specified.";
+              document.getElementById("project-goal").innerText =
+                project.goal || "Not provided.";
+              document.getElementById("project-versions").innerText =
+                project.versions || "No versions available.";
+              document.getElementById("project-process").innerText =
+                project.process || "Process details not documented.";
+              document.getElementById("project-final").innerText =
+                project.final || "Final implementation details not provided.";
+              document.getElementById("project-tech").innerText = project.tech;
+              document.getElementById("project-demo").href =
+                project.demo || "#";
+              document.getElementById("project-github").href =
+                project.github || "#";
+            } else {
+              document.getElementById("project-details").innerHTML =
+                "<p>Project not found.</p>";
+            }
+          })
+          .catch((error) =>
+            console.error("Error loading project details:", error)
+          );
+      });
+    </script>
+  </body>
+</html>

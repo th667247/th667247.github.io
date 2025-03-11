@@ -4,8 +4,8 @@
       "id": 1,
       "title": "Exercise App",
       "description": "Fitness application designed to help users track their workout goals.",
-      "Features": "Stopwatch: Track session time accurately.",
-      "Challenge": "Troubleshooting the stopwatch functionality revealed the need for a dedicated function to ensure precise time formatting.",
+      "features": ["Stopwatch: Track session time accurately."],
+      "challenge": "Troubleshooting the stopwatch functionality revealed the need for a dedicated function to ensure precise time formatting.",
       "tech": "React Native",
       "image": "Assets/React Projects/Exercise Menu.png",
       "demo": "Assets/Demos/Exercise App.mp4",
@@ -14,8 +14,8 @@
     {
       "id": 2,
       "title": "Todo App",
-      "description": "The Todo app is a productivity tool designed to help users organize and manage their tasks effectively.",
-      "Challenge": "Integrating user authentication, registration, and task tracking into one project proved challenging. Implementing a menu page was the most straightforward solution to demonstrate the project's functionality.",
+      "description": "A productivity tool designed to help users organize and manage their tasks effectively.",
+      "challenge": "Integrating user authentication, registration, and task tracking into one project proved challenging. Implementing a menu page was the most straightforward solution to demonstrate the project's functionality.",
       "tech": "React",
       "image": "Assets/React Projects/To Do.png",
       "demo": "Assets/Demos/To Do App Demo.mp4",
@@ -30,7 +30,7 @@
       "demo": "Assets/Demos/Quiz Demo.mp4",
       "github": "https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Quiz%20App"
     },
-       {
+    {
       "id": 4,
       "title": "Flash Card App",
       "description": "A flash card app for practicing vocabulary or concepts.",
@@ -38,8 +38,7 @@
       "image": "Assets/Figma projects/Design Flash Card App.png",
       "demo": null,
       "github": null
-    }
-    ,
+    },
     {
       "id": 5,
       "title": "Exercise Design",
@@ -48,8 +47,7 @@
       "image": "Assets/Figma projects/Exercise App Design.png",
       "demo": null,
       "github": null
-    }
-    ,
+    },
     {
       "id": 6,
       "title": "Todo Design",
@@ -62,16 +60,16 @@
     {
       "id": 7,
       "title": "Mystical Realms",
-      "description": "Developed in Figma, the Todo Design prioritizes simplicity and functionality.",
+      "description": "A creative UI/UX project developed in Figma with a fantasy-inspired theme.",
       "tech": "Figma",
-      "image":"Assets/Mystical Realms/Mystical Realms.png",
+      "image": "Assets/Mystical Realms/Mystical Realms.png",
       "demo": null,
       "github": null
     },
     {
       "id": 8,
       "title": "Not Enough Salt",
-      "description": "Developed in Figma, the Todo Design prioritizes simplicity and functionality.",
+      "description": "A meal planning prototype designed in Figma to help users organize their dietary needs effectively.",
       "tech": "Figma",
       "image": "Assets/Not Enough Salt/Meal Plan Protype.pdf",
       "demo": null,
@@ -79,13 +77,12 @@
     },
     {
       "id": 9,
-      "title": "Laybrith",
-      "description": "Developed in Figma",
+      "title": "Labyrinth",
+      "description": "An interactive UI/UX project designed in Figma, focused on navigation experiences.",
       "tech": "Figma",
       "image": "Assets/Labyrinth/Labyrinth.png",
-      "demo": null,
+      "demo": "https://www.figma.com/proto/efX3KwG6JmIGlQa7I3RXNx/Labyrinth?node-id=103-5671&p=f&t=fRxjODo5lCG75bbN-1&scaling=contain&content-scaling=fixed&page-id=101%3A37&starting-point-node-id=103%3A5671",
       "github": null
     }
   ]
 }
-

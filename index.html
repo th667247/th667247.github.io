@@ -7,173 +7,173 @@
       name="description"
       content="Thrisha Armstrong's portfolio showcasing digital media projects, web design, and UI/UX work."
     />
-    <meta name="author" content="Thrisha Armstrong" />
-    <link rel="icon" href="/path/to/your/favicon.ico" />
     <title>Thrisha Armstrong | Digital Media & UI/UX Designer</title>
+
+    <!-- FontAwesome for Icons -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Dongle&display=swap"
       rel="stylesheet"
     />
-    <link href="styles.css" rel="stylesheet" />
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <div id="main">
-        <div class="inner">
-          <header id="header">
-            <a href="#" class="logo"
-              ><strong>Thrisha Armstrong</strong> | Portfolio</a
-            >
-          </header>
 
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- Fixed Sidebar -->
+      <header id="header">
+        <div id="nav-container">
           <nav id="menu">
             <ul>
-              <li><a href="#" onclick="showTab('home')">Home</a></li>
-              <li><a href="#" onclick="showTab('about')">About</a></li>
-              <li><a href="#" onclick="showTab('projects')">Projects</a></li>
-              <li><a href="#" onclick="showTab('contact')">Contact</a></li>
+              <li><a href="#" data-tab="home" class="tab-link">Home</a></li>
+              <li><a href="#" data-tab="about" class="tab-link">About</a></li>
+              <li>
+                <a href="#" data-tab="projects" class="tab-link">Projects</a>
+              </li>
             </ul>
           </nav>
-
-          <!-- Home Page -->
-          <section id="home" class="tab-content active">
-            <div class="hero">
-              <h1>Hi, I'm [Your Name]</h1>
-              <p>
-                A UI/UX Designer & Developer passionate about creating intuitive
-                and beautiful digital experiences.
-              </p>
-              <a href="#" onclick="showTab('projects')" class="btn"
-                >View My Work</a
-              >
-            </div>
-            <div class="skills">
-              <h2>My Tech Stack</h2>
-              <ul class="skills-list">
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Figma</li>
-                <li>CSS & HTML</li>
-                <li>API Integration</li>
-              </ul>
-            </div>
-          </section>
-          <!-- About Page -->
-          <section id="about" class="tab-content">
-            <h2>About Me</h2>
-            <p>
-              [Write a short professional bio about yourself, your skills, and
-              experience.]
-            </p>
-
-            <h3>My Experience</h3>
-            <ul>
-              <li>
-                <strong>Company Name</strong> - UI/UX Designer (20XX - Present)
-              </li>
-              <li>
-                <strong>Company Name</strong> - Frontend Developer (20XX - 20XX)
-              </li>
-            </ul>
-
-            <h3>Education</h3>
-            <ul>
-              <li><strong>Degree Name</strong> - University Name (Year)</li>
-            </ul>
-
-            <a href="resume.pdf" class="btn" download>Download Resume</a>
-          </section>
-          <!-- Contact Page -->
-          <section id="contact" class="tab-content">
-            <h2>Contact Me</h2>
-            <p>
-              Have a project in mind or just want to say hi? Fill out the form
-              below!
-            </p>
-
-            <form id="contact-form">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required />
-
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" required></textarea>
-
-              <button type="submit" class="btn">Send Message</button>
-            </form>
-
-            <h3>Connect with Me</h3>
-            <ul class="social-links">
-              <li>
-                <a href="https://github.com/yourgithub" target="_blank"
-                  >GitHub</a
-                >
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/yourlinkedin" target="_blank"
-                  >LinkedIn</a
-                >
-              </li>
-            </ul>
-          </section>
-          <!-- Project Details Sidebar -->
-          <aside id="project-sidebar">
-            <div id="sidebar-header">
-              <h2 id="project-title">Project Title</h2>
-              <button id="close-sidebar">&times;</button>
-            </div>
-            <div id="sidebar-tabs">
-              <button
-                class="tab-button active"
-                onclick="openSidebarTab('details')"
-              >
-                Details
-              </button>
-
-              <button class="tab-button" onclick="openSidebarTab('assets')">
-                Assets
-              </button>
-              <button class="tab-button" onclick="openSidebarTab('resources')">
-                Resources
-              </button>
-            </div>
-            <div id="sidebar-content">
-              <div id="details" class="sidebar-tab active">
-                <p id="project-description"></p>
-                <p>
-                  <strong>Developed with:</strong>
-                  <span id="project-tech"></span>
-                </p>
-                <a id="project-demo" href="#" target="_blank" class="btn"
-                  >Live Demo</a
-                >
-                <a id="project-github" href="#" target="_blank" class="btn"
-                  >GitHub</a
-                >
-              </div>
-              <div id="assets" class="sidebar-tab"></div>
-            </div>
-          </aside>
-
-          <section id="about" class="tab-content">
-            <h2>About Me</h2>
-            <p>Update about me content here...</p>
-          </section>
-
-          <section id="projects" class="tab-content">
-            <main class="container">
-              <section
-                id="projects-container"
-                class="projects-grid row"
-              ></section>
-            </main>
-          </section>
         </div>
+
+        <!-- Footer with Contact Icons (Inside Sidebar) -->
+        <footer id="sidebar-footer">
+          <div id="contact-icons">
+            <a
+              href="mailto:your.email@example.com"
+              target="_blank"
+              title="Email"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+4079379431" title="Call">
+              <i class="fas fa-phone"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/yourprofile"
+              target="_blank"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/yourgithub"
+              target="_blank"
+              title="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </footer>
+      </header>
+
+      <!-- Main Content -->
+      <div id="main">
+        <section id="home" class="tab-content active">
+          <div class="hero">
+            <p>
+              Hi, I'm Thrisha Armstrong, a UI/UX Designer & Developer passionate
+              about creating intuitive and beautiful digital experiences.
+            </p>
+            <p></p>
+          </div>
+        </section>
+        <!-- About Content -->
+
+        <section id="about" class="tab-content">
+          <!-- Profile Image -->
+          <div id="profile-upload">
+            <label for="upload-input" class="upload-label">
+              <img
+                id="profile-picture"
+                src="Assets/Images/Thrisha .jpg"
+                alt="Profile Picture"
+              />
+            </label>
+          </div>
+          <h2>From Pixels to Possibilities</h2>
+
+          <p>
+            I find it fascinating that I am part of the last generation to have
+            lived in a world untouched by AI. There’s something nostalgic about
+            remembering a time when technology felt more like a companion than
+            an architect of our daily lives. My earliest memories of computers
+            take me back to a bulky gray machine, its screen glowing with that
+            iconic pinball game—one I’m sure many from my generation were
+            equally obsessed with. And, of course, who could forget that
+            incredibly distinguished dial-up noise, the sound of patience itself
+            as we waited to connect to the internet? Technology has always been
+            a presence in my life, evolving alongside me like an old friend. My
+            first phone was a Sidekick, though I secretly preferred sneaking my
+            sister’s pink Razr just to play that classic snake game. I still
+            remember the pure excitement of owning my first touchscreen phone—an
+            Android I cherished like a treasure. And my first iPod? A reminder
+            of a time when we carried separate devices for everything. It’s
+            funny to think how far we’ve come. Looking back, I realize these
+            experiences were the foundation of my love for digital media. I have
+            always been a creative soul, once dreaming of becoming the next
+            Leonardo da Vinci (though, let’s be real, that was a bit ambitious).
+            But in pursuing art, I stumbled upon something even more profound—a
+            bridge between technology and design, one that allows me to create
+            experiences that truly connect with people. For me, crafting
+            beautiful, intuitive, and human-centered digital experiences will be
+            my Mona Lisa—a legacy of creativity, innovation, and heart in an
+            ever-evolving digital world.
+          </p>
+          <h2>Key Skills</h2>
+          <p>
+            Software Design: Wireframing, system architecture, usability
+            considerations UI & Visual Design: Typography, color theory, layout
+            design, interactive components User Research: Surveys, interviews,
+            usability testing, data analysis Project Management: Agile
+            methodologies, task prioritization, collaboration tools Prototyping:
+            Low-fidelity & high-fidelity mockups, interactive prototypes, Figma,
+            Adobe XD
+          </p>
+          <h2>Personal Interests</h2>
+          <p>
+            Traveling: Exploring new cultures, architecture, and local
+            traditions Art History: Studying classical and modern art movements,
+            museum visits Painting: Expressing creativity through different
+            mediums and techniques Foodie: Discovering new cuisines, trying
+            unique restaurants, and home cooking
+          </p>
+          <h2>Download My Resume</h2>
+          <p>You can download a copy of my resume below.</p>
+          <a
+            href="Assets/Resume/Thrisha_Armstrong_Resume.pdf"
+            download
+            class="resume-download"
+          >
+            <i class="fas fa-file-download"></i> Download Resume
+          </a>
+        </section>
+
+        <section id="projects" class="tab-content">
+          <div id="projects-container"></div>
+        </section>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Modal Overlay -->
+    <div id="modal-overlay"></div>
+
+    <!-- Project Modal -->
+    <div id="project-modal">
+      <button id="close-modal">&times;</button>
+      <img id="modal-image" src="" alt="Project Image" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <p><strong>Tech Used:</strong> <span id="modal-tech"></span></p>
+      <div class="modal-buttons">
+        <a id="modal-demo" href="#" target="_blank">Live Demo</a>
+        <a id="modal-github" href="#" target="_blank">GitHub</a>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
