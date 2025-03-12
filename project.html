@@ -1,87 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Details</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div id="project-details">
-      <h1 id="project-title"></h1>
-      <img id="project-image" src="" alt="Project Image" />
 
-      <h2>Overview</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Dongle&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+
+<body>
+  <button id="back-button">← Back</button>
+  <div id="project-details">
+    <h1 id="project-title"></h1>
+    <img id="project-image" src="" alt="Project Image" style="display: none;" />
+
+    <div id="project-content">
+      <h2 id="overview-title" style="display: none;">Overview</h2>
       <p id="project-description"></p>
 
-      <h2>Reason for the Project</h2>
-      <p id="project-reason"></p>
+      <h2 id="features-title" style="display: none;">Key Features</h2>
+      <ul id="project-features"></ul>
 
-      <h2>Issues Encountered</h2>
-      <p id="project-challenges"></p>
+      <h2 id="challenges-title" style="display: none;">Challenges & Solutions</h2>
+      <ul id="project-challenges"></ul>
 
-      <h2>Project Goal</h2>
-      <p id="project-goal"></p>
+      <h2 id="objectives-title" style="display: none;">Project Objectives</h2>
+      <ul id="project-objectives"></ul>
 
-      <h2>Different Versions</h2>
-      <p id="project-versions"></p>
+      <h2 id="versions-title" style="display: none;">Different Versions</h2>
+      <ul id="project-versions"></ul>
 
-      <h2>Process & Approach</h2>
-      <p id="project-process"></p>
+      <h2 id="process-title" style="display: none;">Process & Approach</h2>
+      <ul id="project-process"></ul>
 
-      <h2>Final Implementation</h2>
-      <p id="project-final"></p>
+      <h2 id="tech-title" style="display: none;">Programs</h2>
+      <ul id="project-tech"></ul>
 
-      <h2>Tech Used</h2>
-      <p id="project-tech"></p>
+      <h2 id="role-title" style="display: none;">Role</h2>
+      <p id="project-role"></p>
 
-      <div id="project-links">
-        <a id="project-demo" href="#" target="_blank">Live Demo</a>
-        <a id="project-github" href="#" target="_blank">GitHub</a>
-      </div>
+      <h2 id="impact-title" style="display: none;">Projected Impact</h2>
+      <ul id="project-impact"></ul>
+
+      <h2 id="date-title" style="display: none;">Project Date</h2>
+      <p id="project-date"></p>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectId = urlParams.get("id");
+    <div id="project-links">
+      <a id="project-demo" href="#" target="_blank" style="display: none;">Demo</a>
+      <a id="project-github" href="#" target="_blank" style="display: none;">Link</a>
+    </div>
+  </div>
 
-        fetch("db.json")
-          .then((response) => response.json())
-          .then((data) => {
-            const project = data.projects.find((p) => p.id == projectId);
-            if (project) {
-              document.getElementById("project-title").innerText =
-                project.title;
-              document.getElementById("project-image").src = project.image;
-              document.getElementById("project-description").innerText =
-                project.description;
-              document.getElementById("project-reason").innerText =
-                project.reason || "Not provided.";
-              document.getElementById("project-challenges").innerText =
-                project.challenge || "Not specified.";
-              document.getElementById("project-goal").innerText =
-                project.goal || "Not provided.";
-              document.getElementById("project-versions").innerText =
-                project.versions || "No versions available.";
-              document.getElementById("project-process").innerText =
-                project.process || "Process details not documented.";
-              document.getElementById("project-final").innerText =
-                project.final || "Final implementation details not provided.";
-              document.getElementById("project-tech").innerText = project.tech;
-              document.getElementById("project-demo").href =
-                project.demo || "#";
-              document.getElementById("project-github").href =
-                project.github || "#";
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = parseInt(urlParams.get("id"), 10); // Get project ID from URL
+
+  fetch("db.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const project = data.projects.find((p) => p.id === projectId);
+
+      if (project) {
+        document.getElementById("project-title").innerText = project.title || "No Title Available";
+
+        // Handle Main Project Image
+        const projectImage = document.getElementById("project-image");
+        if (project.image) {
+          projectImage.src = project.image;
+          projectImage.style.display = "block";
+        }
+
+        // Handle Simple Text Fields
+        const fields = [
+          { id: "project-description", value: project.description, titleId: "overview-title" },
+          { id: "project-date", value: project.date, titleId: "date-title" },
+        ];
+
+        fields.forEach(({ id, value, titleId }) => {
+          if (value) {
+            document.getElementById(id).innerText = value;
+            document.getElementById(titleId).style.display = "block";
+          }
+        });
+
+        // Handle Lists with Images & Descriptions
+        const listFields = [
+          { id: "project-challenges", value: project.challenges, titleId: "challenges-title" },
+          { id: "project-objectives", value: project.objectives, titleId: "objectives-title" },
+          { id: "project-process", value: project.process, titleId: "process-title" },
+          { id: "project-features", value: project.features, titleId: "features-title" },
+          { id: "project-tech", value: project.tech, titleId: "tech-title" },
+          { id: "project-impact", value: project.impact, titleId: "impact-title" },
+          { id: "project-role", value: project.role, titleId: "role-title" }
+        ];
+
+        listFields.forEach(({ id, value, titleId }) => {
+          const listElement = document.getElementById(id);
+          if (value && value.length) {
+            listElement.innerHTML = ""; // Clear previous content
+            value.forEach((item) => {
+              const li = document.createElement("li");
+
+              if (typeof item === "object") { // Handle image + text objects
+                if (item.image) {
+                  const img = document.createElement("img");
+                  img.src = item.image;
+                  img.alt = "Related Image";
+                  img.style.maxWidth = "100%";
+                  img.style.marginBottom = "10px";
+                  img.style.borderRadius = "5px";
+                  li.appendChild(img);
+                }
+                if (item.description) {
+                  const text = document.createElement("p");
+                  text.innerText = item.description;
+                  li.appendChild(text);
+                }
+              } else {
+                li.innerText = item; // Handle plain text items
+              }
+
+              listElement.appendChild(li);
+            });
+            document.getElementById(titleId).style.display = "block";
+          }
+        });
+
+        // Handle Different Versions with Images
+        const versionsList = document.getElementById("project-versions");
+        if (project.design_versions && project.design_versions.length) {
+          versionsList.innerHTML = ""; // Clear previous content
+
+          project.design_versions.forEach((version) => {
+            const li = document.createElement("li");
+
+            if (typeof version === "object") { // Checks if new structured format is used
+              if (version.image) {
+                const img = document.createElement("img");
+                img.src = version.image;
+                img.alt = "Version Image";
+                img.style.maxWidth = "100%";
+                img.style.marginBottom = "10px";
+                img.style.borderRadius = "5px";
+                li.appendChild(img);
+              }
+              if (version.description) {
+                const text = document.createElement("p");
+                text.innerText = version.description;
+                li.appendChild(text);
+              }
             } else {
-              document.getElementById("project-details").innerHTML =
-                "<p>Project not found.</p>";
+              li.innerText = version; // Fallback for old format
             }
-          })
-          .catch((error) =>
-            console.error("Error loading project details:", error)
-          );
-      });
-    </script>
-  </body>
+
+            versionsList.appendChild(li);
+          });
+
+          document.getElementById("versions-title").style.display = "block";
+        }
+
+        // Set Links
+        const demoLink = document.getElementById("project-demo");
+        if (project.demo) {
+          demoLink.href = project.demo;
+          demoLink.style.display = "inline-block";
+        }
+
+        const githubLink = document.getElementById("project-github");
+        if (project.github) {
+          githubLink.href = project.github;
+          githubLink.style.display = "inline-block";
+        }
+      } else {
+        document.getElementById("project-details").innerHTML = "<p>Project not found.</p>";
+      }
+    })
+    .catch((error) => console.error("Error loading project details:", error));
+
+  // 🔹 Back to Top Button Functionality
+  const backToTopButton = document.createElement("button");
+  backToTopButton.id = "back-to-top";
+  backToTopButton.textContent = "↑ Back to Top";
+  document.body.appendChild(backToTopButton);
+  
+  backToTopButton.style.position = "fixed";
+  backToTopButton.style.bottom = "20px";
+  backToTopButton.style.right = "20px";
+  backToTopButton.style.backgroundColor = "#007bff";
+  backToTopButton.style.color = "white";
+  backToTopButton.style.border = "none";
+  backToTopButton.style.padding = "12px 18px";
+  backToTopButton.style.fontSize = "16px";
+  backToTopButton.style.borderRadius = "5px";
+  backToTopButton.style.cursor = "pointer";
+  backToTopButton.style.display = "none";
+  backToTopButton.style.transition = "opacity 0.3s ease-in-out";
+  
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  // 🔹 Back Button Functionality
+  const backButton = document.createElement("button");
+  backButton.id = "back-button";
+  backButton.textContent = "← Back";
+  document.body.insertBefore(backButton, document.body.firstChild); // Place at the top
+
+  backButton.style.position = "fixed";
+  backButton.style.top = "20px";
+  backButton.style.left = "20px";
+  backButton.style.backgroundColor = "#555";
+  backButton.style.color = "white";
+  backButton.style.border = "none";
+  backButton.style.padding = "10px 15px";
+  backButton.style.fontSize = "16px";
+  backButton.style.borderRadius = "5px";
+  backButton.style.cursor = "pointer";
+  backButton.style.transition = "background 0.3s ease-in-out";
+
+  backButton.addEventListener("click", () => {
+    window.history.back(); // Navigate to the previous page
+  });
+
+  backButton.addEventListener("mouseover", () => {
+    backButton.style.backgroundColor = "#333";
+  });
+
+  backButton.addEventListener("mouseout", () => {
+    backButton.style.backgroundColor = "#555";
+  });
+});
+
+  </script>
+  <button id="back-to-top">↑ Back to Top</button>
+</body>
+
 </html>

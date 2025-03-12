@@ -1,67 +1,128 @@
 {
   "projects": [
     {
-      "id": 1,
-      "title": "Exercise App",
-      "description": "Fitness application designed to help users track their workout goals.",
-      "features": ["Stopwatch: Track session time accurately."],
-      "challenge": "Troubleshooting the stopwatch functionality revealed the need for a dedicated function to ensure precise time formatting.",
-      "tech": "React Native",
+      "id": 0,
+      "type": "application",
+      "title": "Exercise Application",
+      "description": "A fitness tracking application designed to help users monitor their workout progress by providing accurate timing and tracking features.",
+      "problem_statement": "Users struggle to accurately track workout sessions, leading to inconsistent fitness progress and difficulty in maintaining workout routines. This app provides a seamless solution with an integrated stopwatch and tracking system.",
+      "challenges": [
+        "Ensuring precise stopwatch functionality with millisecond accuracy.",
+        "Optimizing UI responsiveness for various screen sizes.",
+        "Handling background activity without disrupting active workout tracking."
+      ],
+      "objectives":null,
+      "design_versions": [
+        "Basic Timer: Focused on stopwatch functionality only.",
+        "Enhanced UI: Introduced a dark mode and intuitive interface.",
+        "Advanced Analytics: Added real-time progress tracking and statistics."
+      ],
+      "process":null,
+      "features": [
+        "Stopwatch: Track session time accurately.",
+        "Real-time progress tracking and data logging.",
+        "Custom workout modes with personalized timers.",
+        "Dark mode for a better user experience during night workouts.",
+        "Minimalist and intuitive UI for easy navigation."
+      ],
+      "tech": [
+        "React Native",
+        "JavaScript"
+      ],
+      "role": null,
+      "impact": null,
+      "date": "2024-04-21",
       "image": "Assets/React Projects/Exercise Menu.png",
       "demo": "Assets/Demos/Exercise App.mp4",
       "github": "https://github.com/th667247/th667247.github.io/tree/22cd2ab21bed33aa3a6656c6cdbf01009c23b8eb/Projects/Exercise%20App"
     },
     {
       "id": 2,
-      "title": "Todo App",
+      "type": "application",
+      "title": "Todo Application",
       "description": "A productivity tool designed to help users organize and manage their tasks effectively.",
-      "challenge": "Integrating user authentication, registration, and task tracking into one project proved challenging. Implementing a menu page was the most straightforward solution to demonstrate the project's functionality.",
-      "tech": "React",
+      "problem_statement": "Users often struggle to manage and prioritize their tasks, leading to inefficiencies in their daily activities. This app provides an intuitive interface to help users create, track, and complete tasks with ease.",
+      "challenges": [
+        "Integrating user authentication, registration, and task tracking into one project.",
+        "Ensuring smooth navigation across different task categories.",
+        "Optimizing app performance for seamless task updates."
+      ],
+      "objectives": [
+        "Enable users to manage tasks efficiently with a simple and intuitive UI.",
+        "Implement authentication for personalized task management.",
+        "Ensure smooth navigation and real-time task updates."
+      ],
+      "tech": [
+        "React",
+        "JavaScript"
+      ],
       "image": "Assets/React Projects/To Do.png",
       "demo": "Assets/Demos/To Do App Demo.mp4",
       "github": "https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Todo%20App"
     },
     {
       "id": 3,
-      "title": "Quiz App",
-      "description": "The Quiz app is a React Native application designed to provide users with a simple and interactive way to take quizzes.",
-      "tech": "React Native",
+      "title": "Quiz Application",
+      "type": "application",
+      "description": "An interactive quiz app built using React Native, providing users with engaging quizzes on various topics.",
+      "problem_statement": "Users need a fun and engaging way to test their knowledge while improving retention. This app offers a user-friendly interface for taking quizzes on different subjects.",
+      "features": [
+        "Multiple-choice quizzes with randomized questions.",
+        "Timed quizzes for added challenge.",
+        "Score tracking and performance analytics."
+      ],
+      "tech": [
+        "React Native",
+        "JavaScript"
+      ],
       "image": "Assets/React Projects/Quiz.png",
       "demo": "Assets/Demos/Quiz Demo.mp4",
       "github": "https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Quiz%20App"
     },
     {
       "id": 4,
-      "title": "Flash Card App",
-      "description": "A flash card app for practicing vocabulary or concepts.",
-      "tech": "Figma",
+      "title": "Flash Card Design",
+      "type": "design",
+      "description": "A Figma-based design prototype for creating digital flash cards.",
+      "tech": [
+        "Figma"
+      ],
       "image": "Assets/Figma projects/Design Flash Card App.png",
-      "demo": null,
+      "demo": "https://www.figma.com/proto/WdUpSPH08iZHgekV5m9Hx9/Design-Flash-Card-App?node-id=1-765&p=f&t=A2ZjPexOWCZFmni3-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
       "github": null
     },
     {
       "id": 5,
       "title": "Exercise Design",
-      "description": "Crafted in Figma, the Exercise Design embodies a modern and vibrant aesthetic, aimed at delivering an engaging fitness experience.",
-      "tech": "Figma",
+      "type": "design",
+      "description": "A UI/UX design prototype for a fitness tracking app, developed in Figma to optimize user experience.",
+      "tech": [
+        "Figma"
+      ],
       "image": "Assets/Figma projects/Exercise App Design.png",
-      "demo": null,
-      "github": null
+      "demo": "https://www.figma.com/proto/sqeDPOHkEDgOCaMw29wFf5/Exercise-App-Design?node-id=1-6413&p=f&t=j83p7hsny4OJvOUu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "github":null
     },
     {
       "id": 6,
       "title": "Todo Design",
-      "description": "Developed in Figma, the Todo Design prioritizes simplicity and functionality.",
-      "tech": "Figma",
+      "type": "design",
+      "description": "A Figma-based design prototype for a to-do app, focusing on simplicity and functionality.",
+      "tech": [
+        "Figma"
+      ],
       "image": "Assets/Figma projects/TODO App Design.png",
-      "demo": null,
+      "demo": "https://www.figma.com/proto/OgAwD4RNJBWPDC1LFEhklR/TODO-App-Design?node-id=3-1536&p=f&t=DkE1gPoQztzTUSXg-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
       "github": null
     },
     {
       "id": 7,
       "title": "Mystical Realms",
+      "type": "design",
       "description": "A creative UI/UX project developed in Figma with a fantasy-inspired theme.",
-      "tech": "Figma",
+      "tech": [
+        "Figma"
+      ],
       "image": "Assets/Mystical Realms/Mystical Realms.png",
       "demo": null,
       "github": null
@@ -69,20 +130,176 @@
     {
       "id": 8,
       "title": "Not Enough Salt",
-      "description": "A meal planning prototype designed in Figma to help users organize their dietary needs effectively.",
-      "tech": "Figma",
-      "image": "Assets/Not Enough Salt/Meal Plan Protype.pdf",
+      "type": null,
+      "description": null,
+      "tech":null,
+      "problem_statement": null,
+      "challenges": null,
+      "objectives": null,
+      "design_versions": null,
+      "process": null,
+      "features": null,
+      "role": null,
+      "impact": null,
+      "date": null,
+      "image": "Assets/Not Enough Salt/",
       "demo": null,
       "github": null
     },
     {
       "id": 9,
       "title": "Labyrinth",
-      "description": "An interactive UI/UX project designed in Figma, focused on navigation experiences.",
-      "tech": "Figma",
-      "image": "Assets/Labyrinth/Labyrinth.png",
-      "demo": "https://www.figma.com/proto/efX3KwG6JmIGlQa7I3RXNx/Labyrinth?node-id=103-5671&p=f&t=fRxjODo5lCG75bbN-1&scaling=contain&content-scaling=fixed&page-id=101%3A37&starting-point-node-id=103%3A5671",
-      "github": null
-    }
-  ]
-}
+      "type": "application",
+      "description": "Labyrinth is a user-focused digital reading application designed to enhance the reading experience for casual readers, book lovers, and academic users. As one of the lead designers on Team Labyrinth, I worked on improving usability, navigation, and social engagement to create a seamless and personalized reading platform.",
+      "problem_statement": "Existing e-reading platforms often come with frustrating navigation, limited search options, and a lack of community-driven engagement. Our goal was to design an intuitive, feature-rich application that bridges the gap between individual reading experiences and social interaction, making it easier for users to discover, read, and connect with others over books.",
+      "challenges": [
+        {
+          "image": null,
+          "description": "Navigation confusion: Users struggled with unintended page transitions."
+        },
+        {
+          "image": null,
+          "description": "Limited search functionality: Initial version lacked advanced filtering options."
+        },
+        {
+          "image": null,
+          "description": "UI inconsistencies: Some sections lacked clarity, leading to user errors."
+        },
+        {
+          "image": null,
+          "description": "Library loading issues: The library page occasionally stalled, affecting user experience."
+        }
+      ],
+      "objectives": [
+        {
+          "image": null,
+          "description": "Develop an AI-powered recommendation system for personalized book discovery."
+        },
+        {
+          "image": null,
+          "description": "Improve user engagement with interactive reading features."
+        },
+        {
+          "image": null,
+          "description": "Integrate community-driven features such as book clubs and discussions."
+        }
+      ],
+      "design_versions": [
+        {
+          "image": null,
+          "description": "Prototype showcasing the early wireframes."
+        },
+        {
+          "image": "Assets/Labyrinth/Conservative.png",
+          "description": "Conservative: Minimalist and structured for easy navigation."
+        },
+        {
+          "image": "Assets/Labyrinth/Moderate.png",
+          "description": "Moderate: Balanced aesthetics with a dark mode and vibrant interface."
+        },
+        {
+          "image": "Assets/Labyrinth/Wild.png",
+          "description": "Wild: A colorful and social media-style approach."
+        }
+      ],
+      "process": [
+  {
+    "image": null,
+    "description": "Market Research: Analyzed competitors like Libby, Kindle, and Goodreads to identify strengths and weaknesses."
+  },
+  {
+    "image": null,
+    "description": "User Research: Conducted surveys and interviews with over 200 readers to understand pain points in existing platforms."
+  },
+  {
+    "image": null,
+    "description": "Prototyping: Created paper sketches, Adobe XD wireframes, and high-fidelity Figma prototypes to refine the user experience."
+  },
+  {
+    "image": "Assets/Labyrinth/Navigation Structure.png",
+    "description": "Usability Testing: Validating Design Choices. Goal: Ensure Labyrinth’s design is intuitive and meets user expectations."
+  },
+  {
+    "image": null,
+    "description": "Testing Methods: Think-Aloud Testing – Users were asked to verbalize their thoughts while navigating Labyrinth. Task-Based Testing – Users were given specific tasks like finding a book, joining a book club, and adjusting reading preferences. A/B Testing – Different UI layouts were tested to determine which was more user-friendly."
+  },
+  {
+    "image": null,
+    "description": "Key Insights from Testing: Users preferred the 'Moderate' UI version over minimalist and social-heavy versions. Onboarding was confusing initially, leading to a redesigned guided tutorial for first-time users.Search needed advanced filtering (tags, author, genre, recommendation-based)"
+  },
+  {
+    "image": null,
+    "description": "Refinements: Data-Driven Improvements – Implemented major changes based on usability testing feedback. Added breadcrumb trails, clear back buttons, and tab-based categorization to improve usability."
+  },
+  {
+    "image": null,
+    "description": "Smarter Search: Implemented AI-powered recommendations and multi-filter options for enhanced book discovery."
+  },
+  {
+    "image": null,
+    "description": "Interactive Social Features: Incorporated book discussions, live annotations, and book club integration for a community-driven reading experience."
+  },
+  {
+    "image": "Assets/Labyrinth/Style_Guide - Copy.png",
+    "description": "Accessibility & Customization: Added font adjustments, background themes, and audiobook integration for an inclusive experience."
+  },
+  {
+    "image": null,
+    "description": "Final Outcome: User error rate reduced by 40% after UI refinements, search efficiency improved by 25%, and engagement increased by 30%."
+  }
+],
+
+        "features": [
+          {
+            "image": null,
+            "description": "AI-powered book recommendations"
+          },
+          {
+            "image": null,
+            "description": "Advanced search filters (genre, author, user preferences)"
+          },
+          {
+            "image": null,
+            "description": "Community & social features (book clubs, messaging)"
+          },
+          {
+            "image": null,
+            "description": "Personalized reading settings (fonts, themes, accessibility)"
+          },
+          {
+            "image": null,
+            "description": "Interactive reading tools (highlighting, note-taking, progress tracking)"
+          }
+        ],
+        "tech": [
+          "Figma",
+          "Adobe XD",
+          "Canva"
+        ],
+        "role": [
+          {
+            "image": "Assets/Labyrinth/Organizational Chart.png",
+            "description": "Lead UI/UX Designer - Conducted research, designed the interface, and tested usability."
+          }
+        ],
+        "impact": [
+          {
+            "image": null,
+            "description": "Improve user engagement by 30% through personalized book recommendations."
+          },
+          {
+            "image": null,
+            "description": "Reduce navigation errors by 40% after refining the onboarding process."
+          },
+          {
+            "image": null,
+            "description": "Enhance search efficiency, leading to a 25% faster book discovery time."
+          }
+        ],
+        "date": "2024-03-15",
+        "image": "Assets/Labyrinth/Labyrinth.png",
+        "demo": "https://www.figma.com/proto/efX3KwG6JmIGlQa7I3RXNx/Labyrinth?node-id=103-5671&p=f&t=fRxjODo5lCG75bbN-1&scaling=contain&content-scaling=fixed&page-id=101%3A37&starting-point-node-id=103%3A5671",
+        "github": "Assets/Labyrinth/Labyrinth Full Report.pdf"
+      }
+    ]
+  }

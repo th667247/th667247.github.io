@@ -1,0 +1,201 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400&family=Open+Sans:wght@400;600&display=swap");
+
+/* ---- General Page Styling ---- */
+body {
+  font-family: "Dongle", sans-serif;
+  font-size: 25px;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ---- Project Container ---- */
+#project-details {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ---- Project Title ---- */
+#project-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* ---- Project Image ---- */
+#project-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+}
+
+/* ---- Section Headings ---- */
+h2 {
+  font-size: 30px;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+/* ---- Paragraph & List Styling ---- */
+p {
+  font-size: 25px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ---- List Styling ---- */
+ul {
+  list-style-type: disc; /* Adds bullet points */
+  margin-left: 20px;
+  padding-left: 0;
+  
+}
+
+ul li {
+  font-size: 25px;
+  color: #444;
+  margin: 10px 0;
+}
+
+/* ---- Image Formatting for List Items ---- */
+ul li img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+/* ---- Links (Demo & GitHub) ---- */
+#project-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#project-links a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+  margin: 5px;
+}
+
+#project-demo {
+  background-color: #007bff;
+  color: white;
+}
+
+#project-github {
+  background-color: #333;
+  color: white;
+}
+
+#project-links a:hover {
+  opacity: 0.8;
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 600px) {
+  #project-details {
+    padding: 20px;
+  }
+
+  #project-title {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p,
+  ul li {
+    font-size: 18px;
+  }
+}
+/* Back to Top Button Styling */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+#back-to-top:hover {
+  background-color: #0056b3;
+}
+/* Back Button Styling */
+#back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#back-button:hover {
+  background-color: #333;
+}
+
+/* Style for Project Filter Dropdown */
+#project-filter {
+  display: block;
+  width: 200px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#project-filter:hover {
+  background-color: #e6e6e6;
+}
+
+#project-filter:focus {
+  border-color: #007bff;
+  background-color: white;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  #project-filter {
+    width: 100%;
+    font-size: 14px;
+  }
+}
