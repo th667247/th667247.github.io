@@ -5,15 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Details</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Dongle&display=swap"
-    rel="stylesheet" />
   <link rel="stylesheet" href="project.css" />
 </head>
 
 <body>
   <button id="back-button">← Back</button>
+
   <div id="project-details">
     <h1 id="project-title"></h1>
     <img id="project-image" src="" alt="Project Image" style="display: none;" />
@@ -21,6 +18,9 @@
     <div id="project-content">
       <h2 id="overview-title" style="display: none;">Overview</h2>
       <p id="project-description"></p>
+
+      <h2 id="role-title" style="display: none;">Role</h2>
+      <ul id="project-role"></ul>
 
       <h2 id="features-title" style="display: none;">Key Features</h2>
       <ul id="project-features"></ul>
@@ -31,7 +31,7 @@
       <h2 id="objectives-title" style="display: none;">Project Objectives</h2>
       <ul id="project-objectives"></ul>
 
-      <h2 id="versions-title" style="display: none;">Different Versions</h2>
+      <h2 id="versions-title" class="hidden">Different Versions</h2>
       <ul id="project-versions"></ul>
 
       <h2 id="process-title" style="display: none;">Process & Approach</h2>
@@ -39,9 +39,6 @@
 
       <h2 id="tech-title" style="display: none;">Programs</h2>
       <ul id="project-tech"></ul>
-
-      <h2 id="role-title" style="display: none;">Role</h2>
-      <p id="project-role"></p>
 
       <h2 id="impact-title" style="display: none;">Projected Impact</h2>
       <ul id="project-impact"></ul>
@@ -52,203 +49,180 @@
 
     <div id="project-links">
       <a id="project-demo" href="#" target="_blank" style="display: none;">Demo</a>
-      <a id="project-github" href="#" target="_blank" style="display: none;">Link</a>
+      <a id="project-github" href="#" target="_blank" style="display: none;">GitHub</a>
     </div>
   </div>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const projectId = parseInt(urlParams.get("id"), 10); // Get project ID from URL
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = parseInt(urlParams.get("id"), 10);
 
-  fetch("db.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const project = data.projects.find((p) => p.id === projectId);
+      console.log("Project ID from URL:", projectId); // Debugging
 
-      if (project) {
-        document.getElementById("project-title").innerText = project.title || "No Title Available";
+      fetch("db.json")
+        .then(response => response.json())
+        .then(data => {
+          const project = data.projects.find(p => p.id === projectId);
+          console.log("Project Data Loaded:", project); // Debugging
 
-        // Handle Main Project Image
-        const projectImage = document.getElementById("project-image");
-        if (project.image) {
-          projectImage.src = project.image;
-          projectImage.style.display = "block";
-        }
+          if (project) {
+            // Set Main Project Title
+            document.getElementById("project-title").innerText = project.title || "No Title Available";
 
-        // Handle Simple Text Fields
-        const fields = [
-          { id: "project-description", value: project.description, titleId: "overview-title" },
-          { id: "project-date", value: project.date, titleId: "date-title" },
-        ];
-
-        fields.forEach(({ id, value, titleId }) => {
-          if (value) {
-            document.getElementById(id).innerText = value;
-            document.getElementById(titleId).style.display = "block";
-          }
-        });
-
-        // Handle Lists with Images & Descriptions
-        const listFields = [
-          { id: "project-challenges", value: project.challenges, titleId: "challenges-title" },
-          { id: "project-objectives", value: project.objectives, titleId: "objectives-title" },
-          { id: "project-process", value: project.process, titleId: "process-title" },
-          { id: "project-features", value: project.features, titleId: "features-title" },
-          { id: "project-tech", value: project.tech, titleId: "tech-title" },
-          { id: "project-impact", value: project.impact, titleId: "impact-title" },
-          { id: "project-role", value: project.role, titleId: "role-title" }
-        ];
-
-        listFields.forEach(({ id, value, titleId }) => {
-          const listElement = document.getElementById(id);
-          if (value && value.length) {
-            listElement.innerHTML = ""; // Clear previous content
-            value.forEach((item) => {
-              const li = document.createElement("li");
-
-              if (typeof item === "object") { // Handle image + text objects
-                if (item.image) {
-                  const img = document.createElement("img");
-                  img.src = item.image;
-                  img.alt = "Related Image";
-                  img.style.maxWidth = "100%";
-                  img.style.marginBottom = "10px";
-                  img.style.borderRadius = "5px";
-                  li.appendChild(img);
-                }
-                if (item.description) {
-                  const text = document.createElement("p");
-                  text.innerText = item.description;
-                  li.appendChild(text);
-                }
-              } else {
-                li.innerText = item; // Handle plain text items
-              }
-
-              listElement.appendChild(li);
-            });
-            document.getElementById(titleId).style.display = "block";
-          }
-        });
-
-        // Handle Different Versions with Images
-        const versionsList = document.getElementById("project-versions");
-        if (project.design_versions && project.design_versions.length) {
-          versionsList.innerHTML = ""; // Clear previous content
-
-          project.design_versions.forEach((version) => {
-            const li = document.createElement("li");
-
-            if (typeof version === "object") { // Checks if new structured format is used
-              if (version.image) {
-                const img = document.createElement("img");
-                img.src = version.image;
-                img.alt = "Version Image";
-                img.style.maxWidth = "100%";
-                img.style.marginBottom = "10px";
-                img.style.borderRadius = "5px";
-                li.appendChild(img);
-              }
-              if (version.description) {
-                const text = document.createElement("p");
-                text.innerText = version.description;
-                li.appendChild(text);
-              }
+            // Handle Project Image (Lazy Load + Fallback)
+            const projectImage = document.getElementById("project-image");
+            if (project.image) {
+              console.log("Project Image Path:", project.image);
+              projectImage.src = project.image;
+              projectImage.loading = "lazy";
+              projectImage.style.display = "block";
             } else {
-              li.innerText = version; // Fallback for old format
+              console.warn("Missing Project Image! Using fallback.");
+              projectImage.src = "Assets/default-placeholder.png";
+              projectImage.style.display = "block";
             }
 
-            versionsList.appendChild(li);
-          });
+            // Handle Simple Text Fields (Overview & Date)
+            const fields = [
+              { id: "project-description", value: project.description, titleId: "overview-title" },
+              { id: "project-date", value: project.date, titleId: "date-title" }
+            ];
 
-          document.getElementById("versions-title").style.display = "block";
+            fields.forEach(({ id, value, titleId }) => {
+              if (value) {
+                document.getElementById(id).innerText = value;
+                document.getElementById(titleId).classList.remove("hidden");
+              } else {
+                document.getElementById(titleId).classList.add("hidden");
+              }
+            });
+
+            // Handle Lists with Images & Descriptions
+            const listFields = [
+              { id: "project-role", value: project.role, titleId: "role-title" },
+              { id: "project-features", value: project.features, titleId: "features-title" },
+              { id: "project-challenges", value: project.challenges, titleId: "challenges-title" },
+              { id: "project-objectives", value: project.objectives, titleId: "objectives-title" },
+              { id: "project-process", value: project.process, titleId: "process-title" },
+              { id: "project-tech", value: project.tech, titleId: "tech-title" },
+              { id: "project-impact", value: project.impact, titleId: "impact-title" }
+            ];
+
+            listFields.forEach(({ id, value, titleId }) => {
+              const listElement = document.getElementById(id);
+              if (Array.isArray(value) && value.length > 0) {
+                listElement.innerHTML = "";
+                value.forEach(item => {
+                  const li = document.createElement("li");
+
+                  if (typeof item === "object") {
+                    if (item.image) {
+                      const img = document.createElement("img");
+                      img.src = item.image;
+                      img.alt = "Related Image";
+                      img.loading = "lazy";
+                      img.classList.add("project-img");
+                      li.appendChild(img);
+                    }
+                    if (item.description) {
+                      const text = document.createElement("p");
+                      text.innerText = item.description;
+                      li.appendChild(text);
+                    }
+                  } else {
+                    li.innerText = item;
+                  }
+
+                  listElement.appendChild(li);
+                });
+                document.getElementById(titleId).classList.remove("hidden");
+              } else {
+                document.getElementById(titleId).classList.add("hidden");
+              }
+            });
+
+            // Handle Nested Titles (Design Versions)
+            const designVersionsContainer = document.getElementById("project-versions");
+            if (Array.isArray(project.design_versions) && project.design_versions.length > 0) {
+              designVersionsContainer.innerHTML = "";
+              project.design_versions.forEach(version => {
+                const versionElement = document.createElement("li");
+                versionElement.innerHTML = `<strong>${version.title}</strong>: ${version.description}`;
+                designVersionsContainer.appendChild(versionElement);
+              });
+              document.getElementById("versions-title").classList.remove("hidden");
+            } else {
+              document.getElementById("versions-title").classList.add("hidden");
+            }
+
+            // Set Links (Ensure visibility)
+            const demoLink = document.getElementById("project-demo");
+            if (project.demo) {
+              demoLink.href = project.demo;
+              demoLink.classList.remove("hidden");
+            } else {
+              demoLink.classList.add("hidden");
+            }
+
+            const githubLink = document.getElementById("project-github");
+            if (project.github) {
+              githubLink.href = project.github;
+              githubLink.classList.remove("hidden");
+            } else {
+              githubLink.classList.add("hidden");
+            }
+          } else {
+            document.getElementById("project-content").innerHTML = "<p>Project not found.</p>";
+          }
+        })
+        .catch(error => console.error("Error loading project details:", error));
+
+      // 🔹 Back to Top Button Functionality (Smooth Fade-in & Out)
+      const backToTopButton = document.createElement("button");
+      backToTopButton.id = "back-to-top";
+      backToTopButton.textContent = "↑ Back to Top";
+      document.body.appendChild(backToTopButton);
+
+      // Style Back to Top Button via JS
+      Object.assign(backToTopButton.style, {
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        backgroundColor: "#007bff",
+        color: "white",
+        border: "none",
+        padding: "12px 18px",
+        fontSize: "16px",
+        borderRadius: "5px",
+        cursor: "pointer",
+        opacity: "0",
+        pointerEvents: "none",
+        transition: "opacity 0.3s ease-in-out"
+      });
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.style.opacity = "1";
+          backToTopButton.style.pointerEvents = "auto";
+        } else {
+          backToTopButton.style.opacity = "0";
+          backToTopButton.style.pointerEvents = "none";
         }
+      });
 
-        // Set Links
-        const demoLink = document.getElementById("project-demo");
-        if (project.demo) {
-          demoLink.href = project.demo;
-          demoLink.style.display = "inline-block";
-        }
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, { once: true });
 
-        const githubLink = document.getElementById("project-github");
-        if (project.github) {
-          githubLink.href = project.github;
-          githubLink.style.display = "inline-block";
-        }
-      } else {
-        document.getElementById("project-details").innerHTML = "<p>Project not found.</p>";
-      }
-    })
-    .catch((error) => console.error("Error loading project details:", error));
-
-  // 🔹 Back to Top Button Functionality
-  const backToTopButton = document.createElement("button");
-  backToTopButton.id = "back-to-top";
-  backToTopButton.textContent = "↑ Back to Top";
-  document.body.appendChild(backToTopButton);
-  
-  backToTopButton.style.position = "fixed";
-  backToTopButton.style.bottom = "20px";
-  backToTopButton.style.right = "20px";
-  backToTopButton.style.backgroundColor = "#007bff";
-  backToTopButton.style.color = "white";
-  backToTopButton.style.border = "none";
-  backToTopButton.style.padding = "12px 18px";
-  backToTopButton.style.fontSize = "16px";
-  backToTopButton.style.borderRadius = "5px";
-  backToTopButton.style.cursor = "pointer";
-  backToTopButton.style.display = "none";
-  backToTopButton.style.transition = "opacity 0.3s ease-in-out";
-  
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  });
-
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+      // 🔹 Back Button Functionality (Ensures One-time Execution)
+      document.getElementById("back-button").addEventListener("click", () => {
+        window.history.back();
+      }, { once: true });
     });
-  });
-
-  // 🔹 Back Button Functionality
-  const backButton = document.createElement("button");
-  backButton.id = "back-button";
-  backButton.textContent = "← Back";
-  document.body.insertBefore(backButton, document.body.firstChild); // Place at the top
-
-  backButton.style.position = "fixed";
-  backButton.style.top = "20px";
-  backButton.style.left = "20px";
-  backButton.style.backgroundColor = "#555";
-  backButton.style.color = "white";
-  backButton.style.border = "none";
-  backButton.style.padding = "10px 15px";
-  backButton.style.fontSize = "16px";
-  backButton.style.borderRadius = "5px";
-  backButton.style.cursor = "pointer";
-  backButton.style.transition = "background 0.3s ease-in-out";
-
-  backButton.addEventListener("click", () => {
-    window.history.back(); // Navigate to the previous page
-  });
-
-  backButton.addEventListener("mouseover", () => {
-    backButton.style.backgroundColor = "#333";
-  });
-
-  backButton.addEventListener("mouseout", () => {
-    backButton.style.backgroundColor = "#555";
-  });
-});
-
   </script>
+
+
   <button id="back-to-top">↑ Back to Top</button>
 </body>
 

@@ -11,13 +11,13 @@
         "Optimizing UI responsiveness for various screen sizes.",
         "Handling background activity without disrupting active workout tracking."
       ],
-      "objectives":null,
+      "objectives": null,
       "design_versions": [
         "Basic Timer: Focused on stopwatch functionality only.",
         "Enhanced UI: Introduced a dark mode and intuitive interface.",
         "Advanced Analytics: Added real-time progress tracking and statistics."
       ],
-      "process":null,
+      "process": null,
       "features": [
         "Stopwatch: Track session time accurately.",
         "Real-time progress tracking and data logging.",
@@ -101,7 +101,7 @@
       ],
       "image": "Assets/Figma projects/Exercise App Design.png",
       "demo": "https://www.figma.com/proto/sqeDPOHkEDgOCaMw29wFf5/Exercise-App-Design?node-id=1-6413&p=f&t=j83p7hsny4OJvOUu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-      "github":null
+      "github": null
     },
     {
       "id": 6,
@@ -119,33 +119,70 @@
       "id": 7,
       "title": "Mystical Realms",
       "type": "design",
-      "description": "A creative UI/UX project developed in Figma with a fantasy-inspired theme.",
-      "tech": [
-        "Figma"
+      "description": "Mystical Realms is a fantasy-inspired UI/UX project created in Figma and Procreate. It explores the use of pixel art and vibrant color schemes to enhance a captivating game narrative. The project focuses on accessibility, art direction, and storytelling through a carefully crafted design process.",
+      "tech": ["Figma", "Procreate"],
+      "problem_statement": "How can game design balance nostalgia, accessibility, and immersive storytelling while maintaining a distinct art style?",
+      "challenges": [
+        "Transitioning from a mobile-polished aesthetic to a pixelated 2D style.",
+        "Ensuring visual clarity while using pixel art.",
+        "Creating a vibrant color palette that enhances storytelling without overshadowing gameplay."
       ],
+      "objectives": [
+        "Design an engaging fantasy world with a cohesive visual identity.",
+        "Optimize pixel art for clarity and accessibility.",
+        "Utilize color theory to evoke emotions and enhance the game's atmosphere."
+      ],
+      "design_versions": [
+        {
+          "title": "Aesthetic Summary",
+          "description": "The evolution of the art style in my game has been a journey of exploration and discovery. Initially conceived with a sketched and polished aesthetic that hinted at a mobile gaming experience, the project took an unexpected turn towards a pixelated 2D style. This transition proved transformative, breathing new life into the game with its retro charm and simplicity.",
+          "image": "Assets/Mystical Realms/Game_Narrative.png"
+        },
+        {
+          "title": "Pixel Art & Accessibility",
+          "description": "The decision to embrace pixel art was driven by its ability to inject vitality into the game effortlessly. Its nostalgic appeal resonates with players while allowing for a more accessible development process. By simplifying the visual elements, the focus shifts towards the core gameplay and narrative, enhancing the overall experience.",
+          "image": "Assets/Mystical Realms/Character_Color_Palettes.png"
+        },
+        {
+          "title": "Use of Vibrant Colors",
+          "description": "Vibrant colors play a pivotal role in setting the tone and atmosphere of the game world. Each hue is carefully selected to evoke emotions and immerse players in the environment without overshadowing the narrative. This deliberate use of color adds depth and richness to the pixelated landscapes, further enhancing the player's engagement and connection to the game.",
+          "image": "Assets/Mystical Realms/Environments_Color_Palettes.png"
+        },
+        {
+          "title": "Final Art Direction",
+          "description": "The art style of my game is a testament to the creative journey it has undertaken. From its humble beginnings to its pixelated fruition, every design choice has been made with the player's experience in mind, ensuring that the game captivates and inspires at every turn.",
+          "image": "Assets/Mystical Realms/Final_GIF_2.gif"
+        }
+      ],
+      "process": [
+        {
+          "title": "Game Narrative",
+          "description": "Intrigued by the mysterious aura, you follow a winding path until you stumble upon an ancient well, its surface cloaked in lush moss. As curiosity overtakes caution, you reach out to touch the well's moss-covered surface. In that fleeting moment, a sudden gust of wind swirls around you, pushing you into the depths of the well. The world around you dissolves into a mesmerizing whirl of ethereal colors. When you awaken, you find yourself in surroundings eerily familiar yet unmistakably different—a world that once existed only within the pages of fables. As you navigate this fantastical realm, you'll encounter guardian-like creatures, friends, and foes. Together, you embark on an unforgettable journey, unraveling the secrets of new worlds and discovering the enchanting tales hidden within 'Mystical Realms.'",
+          "image": "Assets/Mystical Realms/Game_Narrative.png"
+        }
+      ],
+      "features": [
+        {
+          "title": "Settings UI",
+          "image": "Assets/Mystical Realms/Settings.jpg"
+        },
+        {
+          "title": "Concept Art",
+          "image": "Assets/Mystical Realms/concept_art.jpg"
+        },
+        {
+          "title": "Proportion & Scale Studies",
+          "image": "Assets/Mystical Realms/Proportion_Scale.png"
+        }
+      ],
+      "role": "Lead Designer, responsible for art direction, UI/UX design, and narrative development.",
+      "impact": "The project refined pixel art techniques while exploring color theory for storytelling. It also served as a foundation for future fantasy-themed UI/UX projects.",
+      "date": "2024-03-15",
       "image": "Assets/Mystical Realms/Mystical Realms.png",
       "demo": null,
       "github": null
     },
-    {
-      "id": 8,
-      "title": "Not Enough Salt",
-      "type": null,
-      "description": null,
-      "tech":null,
-      "problem_statement": null,
-      "challenges": null,
-      "objectives": null,
-      "design_versions": null,
-      "process": null,
-      "features": null,
-      "role": null,
-      "impact": null,
-      "date": null,
-      "image": "Assets/Not Enough Salt/",
-      "demo": null,
-      "github": null
-    },
+        
     {
       "id": 9,
       "title": "Labyrinth",
@@ -153,36 +190,15 @@
       "description": "Labyrinth is a user-focused digital reading application designed to enhance the reading experience for casual readers, book lovers, and academic users. As one of the lead designers on Team Labyrinth, I worked on improving usability, navigation, and social engagement to create a seamless and personalized reading platform.",
       "problem_statement": "Existing e-reading platforms often come with frustrating navigation, limited search options, and a lack of community-driven engagement. Our goal was to design an intuitive, feature-rich application that bridges the gap between individual reading experiences and social interaction, making it easier for users to discover, read, and connect with others over books.",
       "challenges": [
-        {
-          "image": null,
-          "description": "Navigation confusion: Users struggled with unintended page transitions."
-        },
-        {
-          "image": null,
-          "description": "Limited search functionality: Initial version lacked advanced filtering options."
-        },
-        {
-          "image": null,
-          "description": "UI inconsistencies: Some sections lacked clarity, leading to user errors."
-        },
-        {
-          "image": null,
-          "description": "Library loading issues: The library page occasionally stalled, affecting user experience."
-        }
+        "Navigation confusion: Users struggled with unintended page transitions.",
+        "Limited search functionality: Initial version lacked advanced filtering options.",
+        "UI inconsistencies: Some sections lacked clarity, leading to user errors."
       ],
       "objectives": [
-        {
-          "image": null,
-          "description": "Develop an AI-powered recommendation system for personalized book discovery."
-        },
-        {
-          "image": null,
-          "description": "Improve user engagement with interactive reading features."
-        },
-        {
-          "image": null,
-          "description": "Integrate community-driven features such as book clubs and discussions."
-        }
+        "Develop an AI-powered recommendation system for personalized book discovery.",
+        "Improve user engagement with interactive reading features.",
+        "Integrate community-driven features such as book clubs and discussions.",
+        "Library loading issues: The library page occasionally stalled, affecting user experience."
       ],
       "design_versions": [
         {
@@ -203,103 +219,53 @@
         }
       ],
       "process": [
-  {
-    "image": null,
-    "description": "Market Research: Analyzed competitors like Libby, Kindle, and Goodreads to identify strengths and weaknesses."
-  },
-  {
-    "image": null,
-    "description": "User Research: Conducted surveys and interviews with over 200 readers to understand pain points in existing platforms."
-  },
-  {
-    "image": null,
-    "description": "Prototyping: Created paper sketches, Adobe XD wireframes, and high-fidelity Figma prototypes to refine the user experience."
-  },
-  {
-    "image": "Assets/Labyrinth/Navigation Structure.png",
-    "description": "Usability Testing: Validating Design Choices. Goal: Ensure Labyrinth’s design is intuitive and meets user expectations."
-  },
-  {
-    "image": null,
-    "description": "Testing Methods: Think-Aloud Testing – Users were asked to verbalize their thoughts while navigating Labyrinth. Task-Based Testing – Users were given specific tasks like finding a book, joining a book club, and adjusting reading preferences. A/B Testing – Different UI layouts were tested to determine which was more user-friendly."
-  },
-  {
-    "image": null,
-    "description": "Key Insights from Testing: Users preferred the 'Moderate' UI version over minimalist and social-heavy versions. Onboarding was confusing initially, leading to a redesigned guided tutorial for first-time users.Search needed advanced filtering (tags, author, genre, recommendation-based)"
-  },
-  {
-    "image": null,
-    "description": "Refinements: Data-Driven Improvements – Implemented major changes based on usability testing feedback. Added breadcrumb trails, clear back buttons, and tab-based categorization to improve usability."
-  },
-  {
-    "image": null,
-    "description": "Smarter Search: Implemented AI-powered recommendations and multi-filter options for enhanced book discovery."
-  },
-  {
-    "image": null,
-    "description": "Interactive Social Features: Incorporated book discussions, live annotations, and book club integration for a community-driven reading experience."
-  },
-  {
-    "image": "Assets/Labyrinth/Style_Guide - Copy.png",
-    "description": "Accessibility & Customization: Added font adjustments, background themes, and audiobook integration for an inclusive experience."
-  },
-  {
-    "image": null,
-    "description": "Final Outcome: User error rate reduced by 40% after UI refinements, search efficiency improved by 25%, and engagement increased by 30%."
-  }
-],
-
-        "features": [
-          {
-            "image": null,
-            "description": "AI-powered book recommendations"
-          },
-          {
-            "image": null,
-            "description": "Advanced search filters (genre, author, user preferences)"
-          },
-          {
-            "image": null,
-            "description": "Community & social features (book clubs, messaging)"
-          },
-          {
-            "image": null,
-            "description": "Personalized reading settings (fonts, themes, accessibility)"
-          },
-          {
-            "image": null,
-            "description": "Interactive reading tools (highlighting, note-taking, progress tracking)"
-          }
-        ],
-        "tech": [
-          "Figma",
-          "Adobe XD",
-          "Canva"
-        ],
-        "role": [
-          {
-            "image": "Assets/Labyrinth/Organizational Chart.png",
-            "description": "Lead UI/UX Designer - Conducted research, designed the interface, and tested usability."
-          }
-        ],
-        "impact": [
-          {
-            "image": null,
-            "description": "Improve user engagement by 30% through personalized book recommendations."
-          },
-          {
-            "image": null,
-            "description": "Reduce navigation errors by 40% after refining the onboarding process."
-          },
-          {
-            "image": null,
-            "description": "Enhance search efficiency, leading to a 25% faster book discovery time."
-          }
-        ],
-        "date": "2024-03-15",
-        "image": "Assets/Labyrinth/Labyrinth.png",
-        "demo": "https://www.figma.com/proto/efX3KwG6JmIGlQa7I3RXNx/Labyrinth?node-id=103-5671&p=f&t=fRxjODo5lCG75bbN-1&scaling=contain&content-scaling=fixed&page-id=101%3A37&starting-point-node-id=103%3A5671",
-        "github": "Assets/Labyrinth/Labyrinth Full Report.pdf"
-      }
-    ]
-  }
+        "Market Research: Analyzed competitors like Libby, Kindle, and Goodreads to identify strengths and weaknesses.",
+        "User Research: Conducted surveys and interviews with over 200 readers to understand pain points in existing platforms.",
+        "Prototyping: Created paper sketches, Adobe XD wireframes, and high-fidelity Figma prototypes to refine the user experience.",
+        {
+          "image": "Assets/Labyrinth/Navigation Structure.png"
+        },
+        "Usability Testing: Validating Design Choices. Goal: Ensure Labyrinth’s design is intuitive and meets user expectations.",
+        "Testing Methods: Think-Aloud Testing – Users were asked to verbalize their thoughts while navigating Labyrinth. Task-Based Testing – Users were given specific tasks like finding a book, joining a book club, and adjusting reading preferences. A/B Testing – Different UI layouts were tested to determine which was more user-friendly.",
+        "Key Insights from Testing: Users preferred the 'Moderate' UI version over minimalist and social-heavy versions. Onboarding was confusing initially, leading to a redesigned guided tutorial for first-time users.Search needed advanced filtering (tags, author, genre, recommendation-based)",
+        {
+          "image": null
+        },
+        "Refinements: Data-Driven Improvements – Implemented major changes based on usability testing feedback. Added breadcrumb trails, clear back buttons, and tab-based categorization to improve usability.",
+        "Smarter Search: Implemented AI-powered recommendations and multi-filter options for enhanced book discovery.",
+        "Interactive Social Features: Incorporated book discussions, live annotations, and book club integration for a community-driven reading experience.",
+        {
+          "image": "Assets/Labyrinth/Style_Guide - Copy.png"
+        },
+        "Final Outcome: User error rate reduced by 40% after UI refinements, search efficiency improved by 25%, and engagement in the app increased by 30%.",
+        "Accessibility & Customization: Added font adjustments, background themes, and audiobook integration for an inclusive experience."
+      ],
+      "features": [
+        "AI-powered book recommendations",
+        "Advanced search filters (genre, author, user preferences)",
+        "Community & social features (book clubs, messaging)",
+        "Personalized reading settings (fonts, themes, accessibility)",
+        "Interactive reading tools (highlighting, note-taking, progress tracking)"
+      ],
+      "tech": [
+        "Figma",
+        "Adobe XD",
+        "Canva"
+      ],
+      "role": [
+        {
+          "image": "Assets/Labyrinth/Organizational Chart.png"
+        }
+      ],
+      "impact": [
+        "Improve user engagement by 30% through personalized book recommendations.",
+        "Reduce navigation errors by 40% after refining the onboarding process.",
+        "Enhance search efficiency, leading to a 25% faster book discovery time."
+      ],
+      "date": "2024-03-15",
+      "image": "Assets/Labyrinth/Labyrinth.png",
+      "demo": "https://www.figma.com/proto/efX3KwG6JmIGlQa7I3RXNx/Labyrinth?node-id=103-5671&p=f&t=fRxjODo5lCG75bbN-1&scaling=contain&content-scaling=fixed&page-id=101%3A37&starting-point-node-id=103%3A5671",
+      "github": "Assets/Labyrinth/Labyrinth Full Report.pdf"
+    }
+  ]
+}

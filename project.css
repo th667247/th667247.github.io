@@ -44,6 +44,7 @@ body {
 
 /* ---- Section Headings ---- */
 h2 {
+ 
   font-size: 30px;
   color: #444;
   border-bottom: 2px solid #ddd;
@@ -59,6 +60,7 @@ p {
 }
 
 /* ---- List Styling ---- */
+
 ul {
   list-style-type: disc; /* Adds bullet points */
   margin-left: 20px;
@@ -69,7 +71,8 @@ ul {
 ul li {
   font-size: 25px;
   color: #444;
-  margin: 10px 0;
+  margin: 10px 0; /* Reduce top & bottom spacing */
+  line-height: 1.5em; /* Increase space between lines inside an <li> */
 }
 
 /* ---- Image Formatting for List Items ---- */
@@ -80,24 +83,37 @@ ul li img {
   margin: 10px auto;
   border-radius: 5px;
 }
+ul li:has(img) {
+  list-style-type: none; /* Removes the bullet */
+  padding-left: 0; /* Adjust spacing */
+}
 
 /* ---- Links (Demo & GitHub) ---- */
 #project-links {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Adds space between buttons */
+  flex-wrap: wrap; /* Ensures buttons stack on smaller screens */
 }
+
 
 #project-links a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  padding: 12px 18px;
-  border-radius: 5px;
-  font-size: 16px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 18px;
   font-weight: bold;
-  transition: background 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   margin: 5px;
+  min-width: 150px; /* Ensures uniform button width */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 #project-demo {
   background-color: #007bff;
   color: white;
