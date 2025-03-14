@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   AOS.init(); // Initialize AOS animations
 
@@ -7,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
+  // Define default values for logo text
+  const fullName = "Thrisha Armstrong";
+  const initials = "TA";
 
   // Sticky Navbar Effect
   window.addEventListener("scroll", function () {
@@ -15,10 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
       logo.innerHTML = '<img src="Assets/YMXv.gif" alt="Animated Logo">';
     } else {
       navbar.classList.remove("scrolled");
-      logo.innerHTML = "Thrisha Armstrong";
+      logo.innerHTML = fullName;
     }
   });
-
 
   // Change logo text on hover
   logo.addEventListener("mouseenter", () => {
@@ -28,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
   logo.addEventListener("mouseleave", () => {
     if (window.scrollY > 50) {
       logo.innerText = initials;
+    } else {
+      logo.innerText = fullName;
     }
   });
 
@@ -59,10 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })
     .catch(error => console.error("Error fetching projects:", error));
-});
 
-// Mobile Navbar Toggle
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+  // Mobile Navbar Toggle
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+  }
 });
 

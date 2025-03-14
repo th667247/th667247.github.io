@@ -12,12 +12,7 @@
         "Handling background activity without disrupting active workout tracking."
       ],
       "objectives": null,
-      "design_versions": [
-        "Basic Timer: Focused on stopwatch functionality only.",
-        "Enhanced UI: Introduced a dark mode and intuitive interface.",
-        "Advanced Analytics: Added real-time progress tracking and statistics."
-      ],
-      "process": null,
+      "design_versions": null,
       "features": [
         "Stopwatch: Track session time accurately.",
         "Real-time progress tracking and data logging.",
@@ -34,7 +29,7 @@
       "date": "2024-04-21",
       "image": "Assets/React Projects/Exercise Menu.png",
       "demo": "Assets/Demos/Exercise App.mp4",
-      "details": "https://details.com/th667247/th667247.details.io/tree/22cd2ab21bed33aa3a6656c6cdbf01009c23b8eb/Projects/Exercise%20App"
+      "details": null
     },
     {
       "id": 2,
@@ -58,7 +53,7 @@
       ],
       "image": "Assets/React Projects/To Do.png",
       "demo": "Assets/Demos/To Do App Demo.mp4",
-      "details": "https://details.com/th667247/th667247.details.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Todo%20App"
+      "details": null
     },
     {
       "id": 3,
@@ -77,7 +72,7 @@
       ],
       "image": "Assets/React Projects/Quiz.png",
       "demo": "Assets/Demos/Quiz Demo.mp4",
-      "details": "https://details.com/th667247/th667247.details.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Quiz%20App"
+      "details": null
     },
     {
       "id": 4,
@@ -141,26 +136,20 @@
         {
           "title": "Pixel Art & Accessibility",
           "description": "The decision to embrace pixel art was driven by its ability to inject vitality into the game effortlessly. Its nostalgic appeal resonates with players while allowing for a more accessible development process. By simplifying the visual elements, the focus shifts towards the core gameplay and narrative, enhancing the overall experience.",
-          "image": "Assets/Mystical Realms/Character_Color_Palettes.png"
+          "image": "Assets/Mystical Realms/Character Color Palettes.png"
         },
         {
           "title": "Use of Vibrant Colors",
           "description": "Vibrant colors play a pivotal role in setting the tone and atmosphere of the game world. Each hue is carefully selected to evoke emotions and immerse players in the environment without overshadowing the narrative. This deliberate use of color adds depth and richness to the pixelated landscapes, further enhancing the player's engagement and connection to the game.",
-          "image": "Assets/Mystical Realms/Environments_Color_Palettes.png"
+          "image": "Assets/Mystical Realms/Environments Color Palettes.png"
         },
         {
           "title": "Final Art Direction",
           "description": "The art style of my game is a testament to the creative journey it has undertaken. From its humble beginnings to its pixelated fruition, every design choice has been made with the player's experience in mind, ensuring that the game captivates and inspires at every turn.",
-          "image": "Assets/Mystical Realms/Final_GIF_2.gif"
+          "image": "Assets/Mystical Realms/Final GIF 2.gif"
         }
       ],
-      "process": [
-        {
-          "title": "Game Narrative",
-          "description": "Intrigued by the mysterious aura, you follow a winding path until you stumble upon an ancient well, its surface cloaked in lush moss. As curiosity overtakes caution, you reach out to touch the well's moss-covered surface. In that fleeting moment, a sudden gust of wind swirls around you, pushing you into the depths of the well. The world around you dissolves into a mesmerizing whirl of ethereal colors. When you awaken, you find yourself in surroundings eerily familiar yet unmistakably different—a world that once existed only within the pages of fables. As you navigate this fantastical realm, you'll encounter guardian-like creatures, friends, and foes. Together, you embark on an unforgettable journey, unraveling the secrets of new worlds and discovering the enchanting tales hidden within 'Mystical Realms.'",
-          "image": "Assets/Mystical Realms/Game_Narrative.png"
-        }
-      ],
+      "process": null,
       "features": [
         {
           "title": "Settings UI",
@@ -229,13 +218,13 @@
         "Testing Methods: Think-Aloud Testing – Users were asked to verbalize their thoughts while navigating Labyrinth. Task-Based Testing – Users were given specific tasks like finding a book, joining a book club, and adjusting reading preferences. A/B Testing – Different UI layouts were tested to determine which was more user-friendly.",
         "Key Insights from Testing: Users preferred the 'Moderate' UI version over minimalist and social-heavy versions. Onboarding was confusing initially, leading to a redesigned guided tutorial for first-time users.Search needed advanced filtering (tags, author, genre, recommendation-based)",
         {
-          "image": null
+          "image":"Assets/Labyrinth/path.png"
         },
         "Refinements: Data-Driven Improvements – Implemented major changes based on usability testing feedback. Added breadcrumb trails, clear back buttons, and tab-based categorization to improve usability.",
         "Smarter Search: Implemented AI-powered recommendations and multi-filter options for enhanced book discovery.",
         "Interactive Social Features: Incorporated book discussions, live annotations, and book club integration for a community-driven reading experience.",
         {
-          "image": "Assets/Labyrinth/Style_Guide - Copy.png"
+          "image": "Assets/Labyrinth/Style_Guide.png"
         },
         "Final Outcome: User error rate reduced by 40% after UI refinements, search efficiency improved by 25%, and engagement in the app increased by 30%.",
         "Accessibility & Customization: Added font adjustments, background themes, and audiobook integration for an inclusive experience."

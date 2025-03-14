@@ -45,11 +45,11 @@ body {
 /* Section Headings */
 h2 {
   font-size: 22px;
-  color: #ee00ff;
-  border-bottom: 2px solid #ee00ff;
+  color: #ffffff;
+  border-bottom: 2px solid #FF007F;
   padding-bottom: 6px;
   margin-top: 25px;
-  text-shadow: 2px 2px 8px rgba(238, 0, 255, 0.3);
+  text-shadow: 2px 2px 8px rgb(255, 20, 147);
 }
 
 /* Paragraph & List Styling */
@@ -93,46 +93,22 @@ ul li:has(img) {
 #project-links {
   margin-top: 30px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 #project-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 14px 20px;
-  border-radius: 8px;
   font-size: 18px;
+  text-decoration: none;
+  color: #0d00ff;
   font-weight: bold;
-  transition: all 0.3s ease-in-out;
-  margin: 5px;
-  min-width: 150px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
-  visibility: visible;
-  pointer-events: auto;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  margin: 0 20px; /* Adds spacing on left & right */
+  padding: 10px;
 }
-
-#project-demo {
-  background-color: #ee00ff;
-  color: white;
-}
-
-#project-github {
-  background-color: #333;
-  color: white;
-}
-
 #project-links a:hover {
-  opacity: 0.8;
+  color: white;
+  transform: scale(1.05);
+  text-shadow: 0px 0px 10px rgb(255, 20, 147); /* Neon glow effect */
 }
-
 /* Back Button Styling */
 #back-button {
   position: absolute;
