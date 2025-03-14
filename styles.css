@@ -8,13 +8,16 @@ body {
   line-height: 1.6;
   padding: 20px;
   font-family: "Space Mono", monospace;
-  margin-left: 80px; /* Pushes content to the right */
+  margin-left: 80px;
+  /* Pushes content to the right */
 }
+
 p {
   font-size: 18px;
   max-width: 800px;
   padding: 15px;
 }
+
 /* Main Content */
 section {
   max-width: 800px;
@@ -27,6 +30,7 @@ section {
   flex-direction: column;
   align-items: flex-start;
 }
+
 /* h1 headings */
 section h1 {
   font-size: 35px;
@@ -44,7 +48,8 @@ section h1 {
 section h1:hover {
   color: white;
   transform: scale(1.05);
-  text-shadow: 0px 0px 10px rgb(255, 20, 147); /* Neon glow effect */
+  text-shadow: 0px 0px 10px rgb(255, 20, 147);
+  /* Neon glow effect */
   cursor: none;
 }
 
@@ -64,9 +69,11 @@ section h2 {
 section h2:hover {
   color: white;
   transform: scale(1.05);
-  text-shadow: 0px 0px 10px rgb(255, 20, 147); /* Neon glow effect */
+  text-shadow: 0px 0px 10px rgb(255, 20, 147);
+  /* Neon glow effect */
   cursor: none;
 }
+
 /* Logo  */
 .logo {
   font-size: 18px;
@@ -74,17 +81,21 @@ section h2:hover {
   color: white;
   margin-left: 25px;
   margin-bottom: 20px;
-  display: inline-block; /* Ensures the text stays in one row */
-  white-space: nowrap; /* Prevents line breaks */
-  overflow: hidden; /* Prevents text overflow */
-  text-overflow: ellipsis; 
+  display: inline-block;
+  /* Ensures the text stays in one row */
+  white-space: nowrap;
+  /* Prevents line breaks */
+  overflow: hidden;
+  /* Prevents text overflow */
+  text-overflow: ellipsis;
 
 }
 
 .logo:hover {
   color: white;
   transform: scale(1.05);
-  text-shadow: 0px 0px 10px rgb(255, 20, 147); /* Neon glow effect */
+  text-shadow: 0px 0px 10px rgb(255, 20, 147);
+  /* Neon glow effect */
   cursor: none;
 }
 
@@ -93,13 +104,16 @@ section h2:hover {
   font-size: 22px;
 
 }
+
 /*Navbar */
 #navbar {
   position: fixed;
   top: 5%;
   left: 5%;
-  width: 80px; /* Compact sidebar width */
-  height: 100vh; /* Full height */
+  width: 80px;
+  /* Compact sidebar width */
+  height: 100vh;
+  /* Full height */
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
@@ -112,19 +126,22 @@ section h2:hover {
 
 /* Expand Sidebar on Hover */
 #navbar:hover {
-  width: 200px; /* Expands when hovered */
+  width: 200px;
+  /* Expands when hovered */
 }
 
 /* Adjust main content to prevent overlap */
 body {
-  margin-left: 80px; /* Push content to the right */
+  margin-left: 80px;
+  /* Push content to the right */
   transition: margin-left 0.3s ease-in-out;
 }
 
 /* Expand content space when hovering over navbar */
-#navbar:hover ~ body {
+#navbar:hover~body {
   margin-left: 200px;
 }
+
 /* Hide nav links by default on mobile */
 .nav-links {
   list-style: none;
@@ -135,6 +152,7 @@ body {
   width: 100%;
   gap: 15px;
 }
+
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -144,13 +162,48 @@ body {
   text-align: center;
   transition: background 0.3s ease-in-out;
 }
+
 .nav-links a:hover {
   background: rgba(255, 255, 255, 0.1);
   color: rgb(255, 20, 147);
 }
+.values-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
 
+.value-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
+.value-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgb(255, 20, 147);
+}
 
+.value-item i {
+  font-size: 40px;
+  color: #ff007f;
+  margin-bottom: 10px;
+}
+
+.value-item h3 {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.value-item p {
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.5;
+}
 /* Project Section */
 .project-container {
   display: grid;
@@ -167,8 +220,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-   max-width: 800px;
-   height: 400px;
+  max-width: 800px;
+  height: 400px;
 }
 
 .project-card img {
@@ -188,11 +241,13 @@ body {
   padding: 10px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
- 
+
 }
+
 .project-card:hover .project-overlay {
   opacity: 1;
 }
+
 .project-card:hover img {
   transform: scale(1.05);
 }
@@ -248,9 +303,10 @@ body {
 
 /* Social Media Section */
 #social-media {
-  background: rgba(0, 0, 0, 0.05); /* Subtle background */
+  background: rgba(0, 0, 0, 0.05);
+  /* Subtle background */
   border-radius: 10px;
- 
+
 }
 
 /* Social Media Heading */
@@ -270,7 +326,8 @@ body {
 #social-media a:hover {
   color: white;
   transform: scale(1.05);
-  text-shadow: 0px 0px 10px rgb(255, 20, 147); /* Neon glow effect */
+  text-shadow: 0px 0px 10px rgb(255, 20, 147);
+  /* Neon glow effect */
 }
 
 /* Mobile Styles */
@@ -287,7 +344,7 @@ body {
     margin-left: 60px;
   }
 
-  #navbar:hover ~ body {
+  #navbar:hover~body {
     margin-left: 150px;
   }
 
@@ -301,27 +358,28 @@ body {
     padding: 10px;
   }
 }
-  /* Expand Sidebar on Hover */
-  #navbar:hover {
-    width: 100px;
-  }
 
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 20px 0;
-  }
+/* Expand Sidebar on Hover */
+#navbar:hover {
+  width: 100px;
+}
 
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 15px 0;
-    width: 100%;
-    text-align: center;
-  }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+}
 
 
 @media (max-width: 768px) {
@@ -331,12 +389,14 @@ body {
     overflow-x: auto;
     gap: 15px;
     padding-bottom: 10px;
-    width: 100%; /* Fixes alignment */
+    width: 100%;
+    /* Fixes alignment */
   }
 
   .project-card {
     flex: 0 0 auto;
-    width: 100%; /* Makes project cards fill the screen */
+    width: 100%;
+    /* Makes project cards fill the screen */
     max-width: 300px;
   }
 
@@ -346,7 +406,9 @@ body {
   }
 
   .projects-container {
-    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none;
+    /* Hide scrollbar in Firefox */
   }
 }
