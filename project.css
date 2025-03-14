@@ -1,11 +1,12 @@
 /* Import Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400&family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-/* ---- General Page Styling ---- */
+/* General Page Styling */
 body {
-  font-family: "Dongle", sans-serif;
-  font-size: 25px;
-  background-color: #f4f4f4;
+  font-family: "Space Mono", monospace;
+  font-size: 18px;
+  background-color: #000000;
+  color: white;
   margin: 0;
   padding: 15px;
   display: flex;
@@ -14,26 +15,26 @@ body {
   min-height: 100vh;
 }
 
-/* ---- Project Container ---- */
+/* Project Container */
 #project-details {
-  background: #ffffff;
-  padding: 15px;
+  background: #000000;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   max-width: 900px;
   width: 100%;
 }
 
-/* ---- Project Title ---- */
+/* Project Title */
 #project-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 5px;
-  color: #333;
+  text-align: left;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* ---- Project Image ---- */
+/* Project Image */
 #project-image {
   max-width: 100%;
   height: auto;
@@ -42,40 +43,37 @@ body {
   border-radius: 5px;
 }
 
-/* ---- Section Headings ---- */
+/* Section Headings */
 h2 {
- 
-  font-size: 30px;
-  color: #444;
-  border-bottom: 2px solid #ddd;
+  font-size: 22px;
+  color: #ee00ff;
+  border-bottom: 2px solid #ee00ff;
   padding-bottom: 5px;
   margin-top: 20px;
 }
 
-/* ---- Paragraph & List Styling ---- */
+/* Paragraph & List Styling */
 p {
-  font-size: 25px;
-  color: #555;
+  font-size: 18px;
+  color: white;
   line-height: 1.6;
 }
 
-/* ---- List Styling ---- */
-
+/* List Styling */
 ul {
-  list-style-type: disc; /* Adds bullet points */
+  list-style-type: disc;
   margin-left: 20px;
   padding-left: 0;
-  
 }
 
 ul li {
-  font-size: 25px;
-  color: #444;
-  margin: 10px 0; /* Reduce top & bottom spacing */
-  line-height: 1.5em; /* Increase space between lines inside an <li> */
+  font-size: 18px;
+  color: white;
+  margin: 10px 0;
+  line-height: 1.5em;
 }
 
-/* ---- Image Formatting for List Items ---- */
+/* Image Formatting for List Items */
 ul li img {
   display: block;
   max-width: 100%;
@@ -83,21 +81,21 @@ ul li img {
   margin: 10px auto;
   border-radius: 5px;
 }
+
 ul li:has(img) {
-  list-style-type: none; /* Removes the bullet */
-  padding-left: 0; /* Adjust spacing */
+  list-style-type: none;
+  padding-left: 0;
 }
 
-/* ---- Links (Demo & GitHub) ---- */
+/* Links (Demo & GitHub) */
 #project-links {
   margin-top: 30px;
   text-align: center;
   display: flex;
   justify-content: center;
-  gap: 15px; /* Adds space between buttons */
-  flex-wrap: wrap; /* Ensures buttons stack on smaller screens */
+  gap: 15px;
+  flex-wrap: wrap;
 }
-
 
 #project-links a {
   display: inline-flex;
@@ -110,12 +108,13 @@ ul li:has(img) {
   font-weight: bold;
   transition: all 0.3s ease-in-out;
   margin: 5px;
-  min-width: 150px; /* Ensures uniform button width */
+  min-width: 150px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
 }
+
 #project-demo {
-  background-color: #007bff;
+  background-color: #ee00ff;
   color: white;
 }
 
@@ -128,51 +127,52 @@ ul li:has(img) {
   opacity: 0.8;
 }
 
-/* ---- Responsive Design ---- */
+/* Responsive Design */
 @media (max-width: 600px) {
   #project-details {
     padding: 20px;
   }
 
   #project-title {
-    font-size: 22px;
-  }
-
-  h2 {
     font-size: 20px;
   }
 
-  p,
-  ul li {
+  h2 {
     font-size: 18px;
   }
+
+  p, ul li {
+    font-size: 16px;
+  }
 }
+
 /* Back to Top Button Styling */
 #back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #007bff;
+  background-color: #ee00ff;
   color: white;
   border: none;
   padding: 12px 18px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  display: none; /* Hidden by default */
+  display: none;
   transition: opacity 0.3s ease-in-out;
 }
 
 #back-to-top:hover {
-  background-color: #0056b3;
+  background-color: #bb00cc;
 }
+
 /* Back Button Styling */
 #back-button {
   position: absolute;
   top: 20px;
   left: 20px;
-  background-color: #555;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 15px;
   font-size: 16px;
@@ -193,19 +193,20 @@ ul li:has(img) {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f8f8f8;
+  background-color: #000000;
+  color: white;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
 
 #project-filter:hover {
-  background-color: #e6e6e6;
+  background-color: #333;
 }
 
 #project-filter:focus {
-  border-color: #007bff;
-  background-color: white;
+  border-color: #ee00ff;
+  background-color: black;
 }
 
 /* Adjust for smaller screens */

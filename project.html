@@ -90,14 +90,13 @@
             ];
 
             fields.forEach(({ id, value, titleId }) => {
-              if (value) {
-                document.getElementById(id).innerText = value;
-                document.getElementById(titleId).classList.remove("hidden");
-              } else {
-                document.getElementById(titleId).classList.add("hidden");
-              }
-            });
-
+  if (value) {
+    document.getElementById(id).innerText = value;
+    document.getElementById(titleId).style.display = "block"; // Ensure header is displayed
+  } else {
+    document.getElementById(titleId).style.display = "none"; // Hide if no content
+  }
+});
             // Handle Lists with Images & Descriptions
             const listFields = [
               { id: "project-role", value: project.role, titleId: "role-title" },
@@ -110,37 +109,39 @@
             ];
 
             listFields.forEach(({ id, value, titleId }) => {
-              const listElement = document.getElementById(id);
-              if (Array.isArray(value) && value.length > 0) {
-                listElement.innerHTML = "";
-                value.forEach(item => {
-                  const li = document.createElement("li");
+  const listElement = document.getElementById(id);
+  if (Array.isArray(value) && value.length > 0) {
+    listElement.innerHTML = "";
+    value.forEach(item => {
+      const li = document.createElement("li");
 
-                  if (typeof item === "object") {
-                    if (item.image) {
-                      const img = document.createElement("img");
-                      img.src = item.image;
-                      img.alt = "Related Image";
-                      img.loading = "lazy";
-                      img.classList.add("project-img");
-                      li.appendChild(img);
-                    }
-                    if (item.description) {
-                      const text = document.createElement("p");
-                      text.innerText = item.description;
-                      li.appendChild(text);
-                    }
-                  } else {
-                    li.innerText = item;
-                  }
+      if (typeof item === "object") {
+        if (item.image) {
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.alt = "Related Image";
+          img.loading = "lazy";
+          img.classList.add("project-img");
+          li.appendChild(img);
+        }
+        if (item.description) {
+          const text = document.createElement("p");
+          text.innerText = item.description;
+          li.appendChild(text);
+        }
+      } else {
+        li.innerText = item;
+      }
 
-                  listElement.appendChild(li);
-                });
-                document.getElementById(titleId).classList.remove("hidden");
-              } else {
-                document.getElementById(titleId).classList.add("hidden");
-              }
-            });
+      listElement.appendChild(li);
+    });
+
+    document.getElementById(titleId).style.display = "block"; // Show header when content exists
+  } else {
+    document.getElementById(titleId).style.display = "none"; // Hide if empty
+  }
+});
+
 
             // Handle Nested Titles (Design Versions)
             const designVersionsContainer = document.getElementById("project-versions");

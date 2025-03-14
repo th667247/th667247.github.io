@@ -59,13 +59,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   
     // Change logo on scroll
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
+      const logo = document.getElementById("logo");
       if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-        logo.innerText = initials;
+        logo.innerHTML = '<img src="Assets/YMXv.gif" alt="Animated Logo">';
       } else {
-        navbar.classList.remove("scrolled");
-        logo.innerText = fullName;
+        logo.innerHTML = "Thrisha Armstrong";
       }
     });
   });
