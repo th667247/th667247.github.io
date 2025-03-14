@@ -5,33 +5,32 @@
 body {
   font-family: "Space Mono", monospace;
   font-size: 18px;
-  background-color: #000000;
-  color: white;
+  background-color: #000;
+  color: #e0e0e0;
   margin: 0;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
+
 /* Project Container */
 #project-details {
-  background: #000000;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 900px;
+  padding: 25px;
+  max-width: 800px;
   width: 100%;
 }
 
 /* Project Title */
 #project-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   text-align: left;
-  margin-bottom: 10px;
-  color: white;
-  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Project Image */
@@ -48,21 +47,23 @@ h2 {
   font-size: 22px;
   color: #ee00ff;
   border-bottom: 2px solid #ee00ff;
-  padding-bottom: 5px;
-  margin-top: 20px;
+  padding-bottom: 6px;
+  margin-top: 25px;
+  text-shadow: 2px 2px 8px rgba(238, 0, 255, 0.3);
 }
 
 /* Paragraph & List Styling */
 p {
   font-size: 18px;
-  color: white;
-  line-height: 1.6;
+  color: #d0d0d0;
+  line-height: 1.7;
+  margin-bottom: 15px;
 }
 
 /* List Styling */
 ul {
   list-style-type: disc;
-  margin-left: 20px;
+  margin-left: 35px;
   padding-left: 0;
 }
 
@@ -70,7 +71,7 @@ ul li {
   font-size: 18px;
   color: white;
   margin: 10px 0;
-  line-height: 1.5em;
+  line-height: 1.6;
 }
 
 /* Image Formatting for List Items */
@@ -78,8 +79,9 @@ ul li img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 10px auto;
-  border-radius: 5px;
+  margin: 15px auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 ul li:has(img) {
@@ -95,6 +97,8 @@ ul li:has(img) {
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 #project-links a {
@@ -111,6 +115,8 @@ ul li:has(img) {
   min-width: 150px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 #project-demo {
@@ -125,45 +131,6 @@ ul li:has(img) {
 
 #project-links a:hover {
   opacity: 0.8;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  #project-details {
-    padding: 20px;
-  }
-
-  #project-title {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  p, ul li {
-    font-size: 16px;
-  }
-}
-
-/* Back to Top Button Styling */
-#back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ee00ff;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: none;
-  transition: opacity 0.3s ease-in-out;
-}
-
-#back-to-top:hover {
-  background-color: #bb00cc;
 }
 
 /* Back Button Styling */
@@ -185,34 +152,28 @@ ul li:has(img) {
   background-color: #333;
 }
 
-/* Style for Project Filter Dropdown */
-#project-filter {
-  display: block;
-  width: 200px;
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #000000;
-  color: white;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-}
-
-#project-filter:hover {
-  background-color: #333;
-}
-
-#project-filter:focus {
-  border-color: #ee00ff;
-  background-color: black;
-}
-
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
   #project-filter {
     width: 100%;
     font-size: 14px;
+  }
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+  #project-details {
+    padding: 20px;
+  }
+
+  #project-title {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p, ul li {
+    font-size: 16px;
   }
 }

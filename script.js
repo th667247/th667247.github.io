@@ -1,13 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   AOS.init(); // Initialize AOS animations
 
+  // Select elements once to prevent duplicate declarations
+  const navbar = document.getElementById("navbar");
+  const logo = document.querySelector(".logo");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+
   // Sticky Navbar Effect
-  window.addEventListener("scroll", function() {
-    const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", function () {
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
+      logo.innerHTML = '<img src="Assets/YMXv.gif" alt="Animated Logo">';
     } else {
       navbar.classList.remove("scrolled");
+      logo.innerHTML = "Thrisha Armstrong";
+    }
+  });
+
+
+  // Change logo text on hover
+  logo.addEventListener("mouseenter", () => {
+    logo.innerText = fullName;
+  });
+
+  logo.addEventListener("mouseleave", () => {
+    if (window.scrollY > 50) {
+      logo.innerText = initials;
     }
   });
 
@@ -22,11 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const projectCard = document.createElement("div");
         projectCard.classList.add("project-card");
 
-        // Make the entire card clickable
-        projectCard.addEventListener("click", () => {
-          window.location.href = `project.html?id=${project.id}`;
-        });
-
         projectCard.innerHTML = `
           <img src="${project.image || 'placeholder.jpg'}" alt="${project.title}">
           <div class="project-overlay">
@@ -35,37 +50,19 @@ document.addEventListener("DOMContentLoaded", function() {
           </div>
         `;
 
+        // Make the entire card clickable
+        projectCard.addEventListener("click", () => {
+          window.location.href = `project.html?id=${project.id}`;
+        });
+
         projectsContainer.appendChild(projectCard);
       });
     })
     .catch(error => console.error("Error fetching projects:", error));
+});
 
-    const logo = document.getElementById("logo");
-    const navbar = document.getElementById("navbar");
-    
-    // Store Full Name and Initials in Data Attributes
-    const fullName = logo.dataset.fullname;
-    const initials = logo.dataset.initials;
-  
-    // Change logo text on hover
-    logo.addEventListener("mouseenter", () => {
-      logo.innerText = fullName;
-    });
-  
-    logo.addEventListener("mouseleave", () => {
-      if (window.scrollY > 50) {
-        logo.innerText = initials;
-      }
-    });
-  
-    // Change logo on scroll
-    window.addEventListener("scroll", function () {
-      const logo = document.getElementById("logo");
-      if (window.scrollY > 50) {
-        logo.innerHTML = '<img src="Assets/YMXv.gif" alt="Animated Logo">';
-      } else {
-        logo.innerHTML = "Thrisha Armstrong";
-      }
-    });
-  });
+// Mobile Navbar Toggle
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
 

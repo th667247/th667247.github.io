@@ -34,7 +34,7 @@
       "date": "2024-04-21",
       "image": "Assets/React Projects/Exercise Menu.png",
       "demo": "Assets/Demos/Exercise App.mp4",
-      "github": "https://github.com/th667247/th667247.github.io/tree/22cd2ab21bed33aa3a6656c6cdbf01009c23b8eb/Projects/Exercise%20App"
+      "details": "https://details.com/th667247/th667247.details.io/tree/22cd2ab21bed33aa3a6656c6cdbf01009c23b8eb/Projects/Exercise%20App"
     },
     {
       "id": 2,
@@ -58,7 +58,7 @@
       ],
       "image": "Assets/React Projects/To Do.png",
       "demo": "Assets/Demos/To Do App Demo.mp4",
-      "github": "https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Todo%20App"
+      "details": "https://details.com/th667247/th667247.details.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Todo%20App"
     },
     {
       "id": 3,
@@ -77,7 +77,7 @@
       ],
       "image": "Assets/React Projects/Quiz.png",
       "demo": "Assets/Demos/Quiz Demo.mp4",
-      "github": "https://github.com/th667247/th667247.github.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Quiz%20App"
+      "details": "https://details.com/th667247/th667247.details.io/tree/3b624c2353b5caa00ae9ccf7b67629a948c3491a/Projects/Quiz%20App"
     },
     {
       "id": 4,
@@ -89,7 +89,7 @@
       ],
       "image": "Assets/Figma projects/Design Flash Card App.png",
       "demo": "https://www.figma.com/proto/WdUpSPH08iZHgekV5m9Hx9/Design-Flash-Card-App?node-id=1-765&p=f&t=A2ZjPexOWCZFmni3-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-      "github": null
+      "details": null
     },
     {
       "id": 5,
@@ -101,7 +101,7 @@
       ],
       "image": "Assets/Figma projects/Exercise App Design.png",
       "demo": "https://www.figma.com/proto/sqeDPOHkEDgOCaMw29wFf5/Exercise-App-Design?node-id=1-6413&p=f&t=j83p7hsny4OJvOUu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-      "github": null
+      "details": null
     },
     {
       "id": 6,
@@ -113,7 +113,7 @@
       ],
       "image": "Assets/Figma projects/TODO App Design.png",
       "demo": "https://www.figma.com/proto/OgAwD4RNJBWPDC1LFEhklR/TODO-App-Design?node-id=3-1536&p=f&t=DkE1gPoQztzTUSXg-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-      "github": null
+      "details": null
     },
     {
       "id": 7,
@@ -180,7 +180,7 @@
       "date": "2024-03-15",
       "image": "Assets/Mystical Realms/Mystical Realms.png",
       "demo": null,
-      "github": null
+      "details": null
     },
         
     {
@@ -265,7 +265,7 @@
       "date": "2024-03-15",
       "image": "Assets/Labyrinth/Labyrinth.png",
       "demo": "https://www.figma.com/proto/efX3KwG6JmIGlQa7I3RXNx/Labyrinth?node-id=103-5671&p=f&t=fRxjODo5lCG75bbN-1&scaling=contain&content-scaling=fixed&page-id=101%3A37&starting-point-node-id=103%3A5671",
-      "github": "Assets/Labyrinth/Labyrinth Full Report.pdf"
+      "details": "Assets/Labyrinth/Labyrinth Full Report.pdf"
     }
   ]
 }

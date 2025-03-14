@@ -48,8 +48,8 @@
     </div>
 
     <div id="project-links">
-      <a id="project-demo" href="#" target="_blank" style="display: none;">Demo</a>
-      <a id="project-github" href="#" target="_blank" style="display: none;">GitHub</a>
+      <a id="project-demo" href="#" target="_blank" style="display: none;">Preview</a>
+      <a id="project-details" href="#" target="_blank" style="display: none;">Details</a>
     </div>
   </div>
 
@@ -58,46 +58,41 @@
       const urlParams = new URLSearchParams(window.location.search);
       const projectId = parseInt(urlParams.get("id"), 10);
 
-      console.log("Project ID from URL:", projectId); // Debugging
+      console.log("Project ID from URL:", projectId);
 
       fetch("db.json")
         .then(response => response.json())
         .then(data => {
           const project = data.projects.find(p => p.id === projectId);
-          console.log("Project Data Loaded:", project); // Debugging
+          console.log("Project Data Loaded:", project);
 
           if (project) {
-            // Set Main Project Title
             document.getElementById("project-title").innerText = project.title || "No Title Available";
 
-            // Handle Project Image (Lazy Load + Fallback)
             const projectImage = document.getElementById("project-image");
             if (project.image) {
-              console.log("Project Image Path:", project.image);
               projectImage.src = project.image;
               projectImage.loading = "lazy";
               projectImage.style.display = "block";
             } else {
-              console.warn("Missing Project Image! Using fallback.");
               projectImage.src = "Assets/default-placeholder.png";
               projectImage.style.display = "block";
             }
 
-            // Handle Simple Text Fields (Overview & Date)
             const fields = [
               { id: "project-description", value: project.description, titleId: "overview-title" },
               { id: "project-date", value: project.date, titleId: "date-title" }
             ];
 
             fields.forEach(({ id, value, titleId }) => {
-  if (value) {
-    document.getElementById(id).innerText = value;
-    document.getElementById(titleId).style.display = "block"; // Ensure header is displayed
-  } else {
-    document.getElementById(titleId).style.display = "none"; // Hide if no content
-  }
-});
-            // Handle Lists with Images & Descriptions
+              if (value) {
+                document.getElementById(id).innerText = value;
+                document.getElementById(titleId).style.display = "block";
+              } else {
+                document.getElementById(titleId).style.display = "none";
+              }
+            });
+
             const listFields = [
               { id: "project-role", value: project.role, titleId: "role-title" },
               { id: "project-features", value: project.features, titleId: "features-title" },
@@ -109,47 +104,59 @@
             ];
 
             listFields.forEach(({ id, value, titleId }) => {
-  const listElement = document.getElementById(id);
-  if (Array.isArray(value) && value.length > 0) {
-    listElement.innerHTML = "";
-    value.forEach(item => {
-      const li = document.createElement("li");
+              const listElement = document.getElementById(id);
+              if (Array.isArray(value) && value.length > 0) {
+                listElement.innerHTML = "";
+                value.forEach(item => {
+                  const li = document.createElement("li");
 
-      if (typeof item === "object") {
-        if (item.image) {
-          const img = document.createElement("img");
-          img.src = item.image;
-          img.alt = "Related Image";
-          img.loading = "lazy";
-          img.classList.add("project-img");
-          li.appendChild(img);
-        }
-        if (item.description) {
-          const text = document.createElement("p");
-          text.innerText = item.description;
-          li.appendChild(text);
-        }
-      } else {
-        li.innerText = item;
-      }
+                  if (typeof item === "object") {
+                    if (item.image) {
+                      const img = document.createElement("img");
+                      img.src = item.image;
+                      img.alt = "Related Image";
+                      img.loading = "lazy";
+                      img.classList.add("project-img");
+                      li.appendChild(img);
+                    }
+                    if (item.description) {
+                      const text = document.createElement("p");
+                      text.innerText = item.description;
+                      li.appendChild(text);
+                    }
+                  } else {
+                    li.innerText = item;
+                  }
 
-      listElement.appendChild(li);
-    });
+                  listElement.appendChild(li);
+                });
 
-    document.getElementById(titleId).style.display = "block"; // Show header when content exists
-  } else {
-    document.getElementById(titleId).style.display = "none"; // Hide if empty
-  }
-});
+                document.getElementById(titleId).style.display = "block";
+              } else {
+                document.getElementById(titleId).style.display = "none";
+              }
+            });
 
-
-            // Handle Nested Titles (Design Versions)
             const designVersionsContainer = document.getElementById("project-versions");
             if (Array.isArray(project.design_versions) && project.design_versions.length > 0) {
               designVersionsContainer.innerHTML = "";
+
               project.design_versions.forEach(version => {
                 const versionElement = document.createElement("li");
-                versionElement.innerHTML = `<strong>${version.title}</strong>: ${version.description}`;
+
+                if (version.image) {
+                  const img = document.createElement("img");
+                  img.src = version.image;
+                  img.alt = version.description || "Design version";
+                  img.loading = "lazy";
+                  img.classList.add("design-version-img");
+                  versionElement.appendChild(img);
+                }
+
+                const text = document.createElement("p");
+                text.innerText = version.description;
+                versionElement.appendChild(text);
+
                 designVersionsContainer.appendChild(versionElement);
               });
               document.getElementById("versions-title").classList.remove("hidden");
@@ -157,21 +164,23 @@
               document.getElementById("versions-title").classList.add("hidden");
             }
 
-            // Set Links (Ensure visibility)
+
+            // Handle "Preview" (Demo) Button
             const demoLink = document.getElementById("project-demo");
-            if (project.demo) {
+            if (project.demo && project.demo.trim() !== "") {
               demoLink.href = project.demo;
-              demoLink.classList.remove("hidden");
+              demoLink.style.display = "inline-block";
             } else {
-              demoLink.classList.add("hidden");
+              demoLink.style.display = "none";
             }
 
-            const githubLink = document.getElementById("project-github");
-            if (project.github) {
-              githubLink.href = project.github;
-              githubLink.classList.remove("hidden");
-            } else {
-              githubLink.classList.add("hidden");
+            // Handle "Details" Button (Case Study or Report)
+            const detailsLink = document.getElementById("project-details");
+            if (project.details && project.details.trim() !== "") {
+              detailsLink.href = project.details;
+              detailsLink.style.display = "inline-block";
+
+
             }
           } else {
             document.getElementById("project-content").innerHTML = "<p>Project not found.</p>";
@@ -179,13 +188,16 @@
         })
         .catch(error => console.error("Error loading project details:", error));
 
-      // 🔹 Back to Top Button Functionality (Smooth Fade-in & Out)
-      const backToTopButton = document.createElement("button");
-      backToTopButton.id = "back-to-top";
-      backToTopButton.textContent = "↑ Back to Top";
-      document.body.appendChild(backToTopButton);
-
-      // Style Back to Top Button via JS
+        
+      // Fix Back to Top Button
+      let backToTopButton = document.getElementById("back-to-top");
+      if (!backToTopButton) {
+        backToTopButton = document.createElement("button");
+        backToTopButton.id = "back-to-top";
+        backToTopButton.textContent = "↑ Back to Top";
+        document.body.appendChild(backToTopButton);
+      }
+      // Style Back to Top Button
       Object.assign(backToTopButton.style, {
         position: "fixed",
         bottom: "20px",
@@ -199,32 +211,39 @@
         cursor: "pointer",
         opacity: "0",
         pointerEvents: "none",
+        display: "none", // Ensure it's hidden initially
         transition: "opacity 0.3s ease-in-out"
       });
 
+
+      // Scroll event to toggle visibility
       window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
+          backToTopButton.style.display = "block"; // Ensure it becomes visible
           backToTopButton.style.opacity = "1";
           backToTopButton.style.pointerEvents = "auto";
         } else {
           backToTopButton.style.opacity = "0";
           backToTopButton.style.pointerEvents = "none";
+          setTimeout(() => {
+            if (window.scrollY <= 300) backToTopButton.style.display = "none";
+          }, 300); // Hide completely after fade-out
         }
       });
 
+
+      // Smooth scroll to top when clicked
       backToTopButton.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }, { once: true });
+      });
 
-      // 🔹 Back Button Functionality (Ensures One-time Execution)
+      // Fix Back Button
       document.getElementById("back-button").addEventListener("click", () => {
         window.history.back();
-      }, { once: true });
+      });
     });
+
   </script>
-
-
-  <button id="back-to-top">↑ Back to Top</button>
 </body>
 
 </html>

@@ -3,168 +3,19 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   background-color: #000000;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+  line-height: 1.6;
+  padding: 20px;
   font-family: "Space Mono", monospace;
+  margin-left: 80px; /* Pushes content to the right */
 }
-
-/* Centering Everything with Max Width */
-#page-wrapper {
-  max-width: 1200px;
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #000000;
-}
-
-/* Logo - Centered in Sidebar */
-.logo {
+p {
   font-size: 18px;
-  font-weight: bold;
-  color: white;
-  transition: all 0.4s ease-in-out;
-  cursor: none;
-  text-align: justify;
-  margin-bottom: 20px;
+  max-width: 800px;
+  padding: 15px;
 }
-
-.logo:hover {
-  transform: scale(1.05);
-  color: #ee00ff;
-  text-shadow: 0px 0px 20px rgba(238, 0, 255, 0.8);
-  cursor: none;
-}
-
-/* Shrink effect on scroll */
-.scrolled .logo {
-  font-size: 22px;
-  
-}
-
-/* Navbar - Modern Sidebar */
-#navbar {
-  position: fixed;
-  top: 25%;
-  left: 0;
-  width: 200px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.133);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px 10px;
-  z-index: 1000;
-  transition: width 0.3s ease-in-out;
-
-}
-#logo {
-  position: fixed;
-  left: 3%;
-  top: 10%;
-  transform: translateY(-50%);
-}
-#logo img {
-  width: 50px; /* Adjusts logo size */
-  height: auto;
-  display: none; /* Hides the GIF by default */
-  
-}
-
-
-.scrolled #logo span {
-  display: none;
-}
-
-.scrolled #logo img {
-  display: block;
-}
-/* Navigation Links - Aligned Properly */
-.nav-links {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
-
-.nav-links li {
-  width: 100%;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 300;
-  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  padding: 12px 20px;
-  width: 100%;
-  text-align: justify;
-  display: block;
-  border-radius: 5px;
-}
-
-.nav-links a:hover {
-  color: #ee00ff;
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
-}
-
-/* Active Link Indicator */
-.nav-links a.active {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ee00ff;
-}
-
-/* Gif Container - Inside Navbar & Responsive */
-.gif-container {
-  position: relative; /* Places it within the navbar */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  max-width: 100px;
-  height: auto;
- 
-}
-
-.gif-container img {
-  width: 50px;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .gif-container {
-    max-width: 80px;
-  }
-
-  .gif-container img {
-    width: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .gif-container {
-    max-width: 60px;
-  }
-
-  .gif-container img {
-    width: 50px;
-  }
-}
-
-/* Adjust Main Content */
+/* Main Content */
 section {
   max-width: 800px;
   padding: 50px 20px;
@@ -176,7 +27,6 @@ section {
   flex-direction: column;
   align-items: flex-start;
 }
-
 /* h1 headings */
 section h1 {
   font-size: 35px;
@@ -185,7 +35,6 @@ section h1 {
   letter-spacing: 1.5px;
   color: white;
   margin: 0;
-
   text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
   /* Soft glow effect */
   transition: transform 0.3s ease-out, color 0.3s ease-in-out;
@@ -193,15 +42,13 @@ section h1 {
 
 /* Hover Effect */
 section h1:hover {
+  color: white;
   transform: scale(1.05);
-  color: #ee00ff;
-  /* Neon effect */
-  text-shadow: 0px 0px 20px rgba(238, 0, 255, 0.8);
+  text-shadow: 0px 0px 10px rgba(238, 0, 255, 0.8); /* Neon glow effect */
   cursor: none;
 }
 
-
-/* Left-align h2 headings */
+/* h2 headings */
 section h2 {
   width: 100%;
   text-align: left;
@@ -215,83 +62,137 @@ section h2 {
 
 /* Hover Effect */
 section h2:hover {
+  color: white;
   transform: scale(1.05);
-  color: #ee00ff;
-  /* Neon effect */
-  text-shadow: 0px 0px 20px rgba(238, 0, 255, 0.8);
+  text-shadow: 0px 0px 10px rgba(238, 0, 255, 0.8); /* Neon glow effect */
+  cursor: none;
+}
+/* Logo  */
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  display: inline-block; /* Ensures the text stays in one row */
+  white-space: nowrap; /* Prevents line breaks */
+  overflow: hidden; /* Prevents text overflow */
+  text-overflow: ellipsis; 
+
+}
+
+.logo:hover {
+  color: white;
+  transform: scale(1.05);
+  text-shadow: 0px 0px 10px rgba(238, 0, 255, 0.8); /* Neon glow effect */
   cursor: none;
 }
 
-/* Project Card Styling */
+/* Shrink effect on scroll */
+.scrolled .logo {
+  font-size: 22px;
+
+}
+/*Navbar */
+#navbar {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  width: 80px; /* Compact sidebar width */
+  height: 100vh; /* Full height */
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1000;
+  transition: width 0.3s ease-in-out;
+  padding-top: 20px;
+}
+
+/* Expand Sidebar on Hover */
+#navbar:hover {
+  width: 200px; /* Expands when hovered */
+}
+
+/* Adjust main content to prevent overlap */
+body {
+  margin-left: 80px; /* Push content to the right */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Expand content space when hovering over navbar */
+#navbar:hover ~ body {
+  margin-left: 200px;
+}
+/* Hide nav links by default on mobile */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ee00ff;
+}
+
+
+
+/* Project Section */
 .project-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+  max-width: 800px;
   gap: 20px;
-  justify-content: center;
-  /* Centers the grid horizontally */
-  align-items: center;
-  /* Centers items vertically */
-  max-width: 1000px;
-  /* Optional: Restrict max width for better alignment */
   margin: auto;
 }
 
-#projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-}
-
+/* Project Card */
 .project-card {
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-in-out;
+   max-width: 800px;
+   height: 400px;
 }
 
 .project-card img {
   width: 100%;
-  height: 50%;
   object-fit: cover;
-  transition: transform 0.3s ease-out;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
 }
 
 .project-overlay {
-  font-size: 15px;
-  line-height: 1.3;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 15px;
+  padding: 10px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-
-  white-space: normal;
-  /* Ensures text wraps */
-  overflow-y: auto;
-  /* Allows scrolling if needed */
-  text-overflow: ellipsis;
-  /* Adds "..." if text overflows */
-  max-height: 100px;
-  /* Adjust this value if text still overflows */
-  display: flex;
-  flex-direction: column;
+ 
 }
-
-
 .project-card:hover .project-overlay {
   opacity: 1;
 }
-
 .project-card:hover img {
   transform: scale(1.05);
 }
@@ -345,44 +246,108 @@ section h2:hover {
   /* Dark overlay effect */
 }
 
+/* Social Media Section */
+#social-media {
+  background: rgba(0, 0, 0, 0.05); /* Subtle background */
+  border-radius: 10px;
+ 
+}
 
-/* Responsive Navbar Adjustments */
+/* Social Media Heading */
+#social-media h2 {
+  font-size: 28px;
+  color: white;
+}
+
+#social-media a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #0d00ff; /* Neon purple */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+}
+
+#social-media a:hover {
+  color: white;
+  transform: scale(1.05);
+  text-shadow: 0px 0px 10px rgba(238, 0, 255, 0.8); /* Neon glow effect */
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   #navbar {
-    width: 100%;
-    height: 70px;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 20px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    width: 60px;
+  }
+
+  #navbar:hover {
+    width: 150px;
+  }
+
+  body {
+    margin-left: 60px;
+  }
+
+  #navbar:hover ~ body {
+    margin-left: 150px;
   }
 
   .logo {
-    font-size: 20px;
-    margin: 0;
-  }
-
-  .nav-links {
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
   }
 
   .nav-links a {
-    padding: 8px 12px;
+    font-size: 14px;
+    padding: 10px;
   }
 }
+  /* Expand Sidebar on Hover */
+  #navbar:hover {
+    width: 100px;
+  }
 
-@media (max-width: 480px) {
   .nav-links {
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding: 20px 0;
   }
 
   .nav-links a {
-    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 15px 0;
     width: 100%;
     text-align: center;
+  }
+
+
+@media (max-width: 768px) {
+  .projects-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+    width: 100%; /* Fixes alignment */
+  }
+
+  .project-card {
+    flex: 0 0 auto;
+    width: 100%; /* Makes project cards fill the screen */
+    max-width: 300px;
+  }
+
+  /* Hide Scrollbar */
+  .projects-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects-container {
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
   }
 }
